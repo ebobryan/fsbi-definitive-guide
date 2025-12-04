@@ -1,29 +1,42 @@
 /* ==========================================================================
    For Sale By Inventor - Main Stylesheet
+   FSBI Brand Guidelines Applied
    ========================================================================== */
 
 /* ==========================================================================
    CSS Variables - Dark Theme (Default)
+   FSBI Brand Colors: Primary #256099, Accent #EB6A24
    ========================================================================== */
 :root {
+    /* FSBI Brand Colors */
+    --color-primary: #256099;
+    --color-primary-light: #3a7ab8;
+    --color-primary-dark: #1a4670;
+    --color-accent: #EB6A24;
+    --color-accent-light: #ff8a4c;
+    --color-accent-soft: rgba(235, 106, 36, 0.15);
+    
+    /* Dark Theme Backgrounds */
     --color-bg: #0a0a0f;
     --color-bg-alt: #12121a;
     --color-surface: #1a1a24;
     --color-surface-elevated: #242432;
-    --color-primary: #256099;
-    --color-primary-light: #3a7ab8;
-    --color-primary-dark: #1a4670;
-    --color-accent: #ef6a27;
-    --color-accent-light: #ff8a4c;
-    --color-accent-soft: rgba(239, 106, 39, 0.15);
+    
+    /* Dark Theme Text */
     --color-text: #f4f4f6;
     --color-text-muted: #9ca3af;
     --color-text-subtle: #6b7280;
+    
+    /* Utility Colors */
     --color-success: #10b981;
     --color-warning: #f59e0b;
     --color-border: rgba(255,255,255,0.08);
-    --font-display: 'Instrument Serif', Georgia, serif;
-    --font-body: 'DM Sans', system-ui, sans-serif;
+    
+    /* FSBI Typography: Montserrat for headings, Inter for body */
+    --font-display: 'Montserrat', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    /* Layout */
     --radius: 12px;
     --radius-lg: 24px;
     --shadow: 0 4px 24px rgba(0,0,0,0.4);
@@ -32,23 +45,29 @@
 
 /* ==========================================================================
    CSS Variables - Light Theme
+   FSBI Neutral Light: #F3F4F6, Neutral Dark: #444444
    ========================================================================== */
 body.light-mode {
-    --color-bg: #ffffff;
-    --color-bg-alt: #f5f7fa;
-    --color-surface: #ffffff;
-    --color-surface-elevated: #f0f2f5;
+    /* FSBI Brand Colors (same in both themes) */
     --color-primary: #256099;
     --color-primary-light: #3a7ab8;
     --color-primary-dark: #1a4670;
-    --color-accent: #ef6a27;
+    --color-accent: #EB6A24;
     --color-accent-light: #ff8a4c;
-    --color-accent-soft: rgba(239, 106, 39, 0.1);
-    --color-text: #1a1a2e;
-    --color-text-muted: #4a5568;
-    --color-text-subtle: #718096;
-    --color-success: #10b981;
-    --color-warning: #f59e0b;
+    --color-accent-soft: rgba(235, 106, 36, 0.1);
+    
+    /* FSBI Light Theme Backgrounds */
+    --color-bg: #ffffff;
+    --color-bg-alt: #F3F4F6;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #F3F4F6;
+    
+    /* FSBI Light Theme Text */
+    --color-text: #444444;
+    --color-text-muted: #5a5a5a;
+    --color-text-subtle: #717171;
+    
+    /* Utility Colors */
     --color-border: rgba(0,0,0,0.1);
     --shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
@@ -136,6 +155,25 @@ body::before {
 ::selection {
     background: var(--color-primary);
     color: var(--color-bg);
+}
+
+/* FSBI Typography: Montserrat for headings (bold, modern) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: 1.25rem; }
+
+/* FSBI Readability: Keep paragraphs readable */
+p {
+    max-width: 75ch;
+    line-height: 1.8;
 }
 
 a {
