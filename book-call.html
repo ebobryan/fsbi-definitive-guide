@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Strategy Call | For Sale By Inventor</title>
+    <meta name="description" content="Schedule your FREE 15-minute invention consultation with For Sale By Inventor. Get expert guidance on patents, prototypes, and bringing your idea to market.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Hero for book call page */
+        .book-hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+        }
+
+        .book-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(37, 96, 153, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .book-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-hero-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-hero-content h1 em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        .book-hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .book-hero-intro {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-success);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Video frame */
+        .video-frame {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Calendly Section */
+        .schedule-section {
+            background: var(--color-bg);
+            padding: 4rem 0;
+        }
+
+        .calendly-container {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            min-height: 700px;
+        }
+
+        .calendly-inline-widget {
+            min-height: 700px;
+        }
+
+        /* Call Details Card */
+        .details-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .details-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .details-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .details-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .details-list li:last-child {
+            border-bottom: none;
+        }
+
+        .details-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .details-list strong {
+            color: var(--color-text);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .details-list p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .details-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Consultant Section */
+        .consultant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .consultant-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .consultant-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .consultant-badge {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .consultant-quote {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--color-text);
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-primary);
+            margin: 2rem 0;
+        }
+
+        .consultant-quote cite {
+            display: block;
+            font-size: 1rem;
+            font-style: normal;
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .video-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            color: var(--color-text);
+        }
+
+        .video-card .video-frame {
+            margin-bottom: 1.25rem;
+        }
+
+        .video-card p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .logo-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            list-style: none;
+        }
+
+        .logo-list li {
+            background: var(--color-surface-elevated);
+            padding: 0.4rem 0.75rem;
+            border-radius: var(--radius);
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* Expectations Section */
+        .expectations-list {
+            list-style: none;
+            counter-reset: step;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .expectations-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--color-border);
+            counter-increment: step;
+        }
+
+        .expectations-list li:last-child {
+            border-bottom: none;
+        }
+
+        .expectations-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .expectations-list h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .expectations-list p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Callout box */
+        .callout-box {
+            background: rgba(37, 96, 153, 0.1);
+            border: 1px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .callout-box p {
+            color: var(--color-text);
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin: 0 0 1.5rem 0;
+            position: relative;
+        }
+
+        .testimonial-card blockquote::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--color-primary);
+            opacity: 0.3;
+            position: absolute;
+            top: -1.5rem;
+            left: -0.5rem;
+        }
+
+        .testimonial-card figcaption {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        /* Prepare Checklist */
+        .prepare-checklist {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .prepare-checklist li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+        }
+
+        .prepare-checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--color-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--color-primary);
+            font-size: 0.8rem;
+        }
+
+        /* Final CTA */
+        .final-cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .final-cta-section h2 {
+            color: white;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .final-cta-actions .btn-primary {
+            background: white;
+            color: var(--color-primary);
+        }
+
+        .final-cta-actions .btn-primary:hover {
+            background: var(--color-bg);
+        }
+
+        .final-cta-actions .btn-secondary {
+            border-color: white;
+            color: white;
+        }
+
+        .final-cta-actions .btn-secondary:hover {
+            background: white;
+            color: var(--color-primary);
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .contact-info .ps-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .book-hero-grid,
+            .consultant-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .video-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .book-hero {
+                padding: 7rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .details-actions {
+                flex-direction: column;
+            }
+
+            .details-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contact-info ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </button>
+            <a href="#schedule" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="book-hero">
+        <div class="book-hero-grid">
+            <div class="book-hero-content fade-up">
+                <div class="status-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm-1 15.41-4.71-4.7 1.42-1.42L11 14.59l6.29-6.3 1.42 1.42Z"/></svg>
+                    Schedule Your Call
+                </div>
+                <h1>Book Your <em>Strategy Call</em> 👇</h1>
+                <p class="book-hero-subtitle">Pick a time that works best for your invention consultation.</p>
+                <p class="book-hero-intro">Watch this short message from Neil Montgomery, then choose the perfect time for your strategy call using the scheduler below.</p>
+            </div>
+            <div class="fade-up">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/Pcul-ebU0io" title="Welcome from Neil Montgomery" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <div class="split" style="gap: 3rem; align-items: start;">
+                <div class="fade-up" style="flex: 2;">
+                    <div class="calendly-container">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget" style="min-width: 320px; width: 100%; height: 700px;" data-url="https://calendly.com/forsalebyinventor-forsalebyinventor"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+                </div>
+                <div class="fade-up" style="flex: 1;">
+                    <div class="details-card">
+                        <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-text);">Your Call Details</h3>
+                        <ul class="details-list">
+                            <li>
+                                <span class="details-icon">📅</span>
+                                <div>
+                                    <strong>Your FREE 15-Minute Consultation</strong>
+                                    <p>Once scheduled, your confirmed date and time will appear in your confirmation email.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="details-icon">📧</span>
+                                <div>
+                                    <p>Check your email for the calendar invite and Microsoft Teams meeting link.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="details-icon">📱</span>
+                                <div>
+                                    <p>If you opted in, we'll send a text reminder before your meeting.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="details-icon">👤</span>
+                                <div>
+                                    <p>Your consultation will be with a member of our expert team. If you need to reschedule, use the options above.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="details-actions">
+                            <a href="#schedule" class="btn btn-primary">Book Your Call</a>
+                            <a href="#schedule" class="btn btn-secondary">Need a Different Time?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Consultant -->
+    <section style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="consultant-grid fade-up">
+                <div class="consultant-image">
+                    <picture>
+                        <source srcset="https://forsalebyinventor.com/wp-content/uploads/2025/11/neil-square.jpg" media="(max-width: 767px)">
+                        <img src="https://forsalebyinventor.com/wp-content/uploads/2025/11/neil-tall.jpg" alt="Neil Montgomery" loading="lazy">
+                    </picture>
+                    <div class="consultant-badge">Founder & CEO</div>
+                </div>
+                <div>
+                    <span class="section-label">Your Invention Guide</span>
+                    <h2 class="section-title">Meet Neil Montgomery</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">Neil is the Founder and CEO of For Sale By Inventor and an award-winning inventor himself. He nearly gave up on his own invention (Tailgate Golf) before developing the <strong style="color: var(--color-text);">VIP Invention Success Strategy</strong> that led to his breakthrough.</p>
+                    <blockquote class="consultant-quote">
+                        "My vision is in helping inventors achieve theirs."
+                        <cite>— Neil E. Montgomery</cite>
+                    </blockquote>
+                    <p style="color: var(--color-text-muted); line-height: 1.9;">Neil has helped thousands of everyday inventors navigate from idea to patented product. He's been exactly where you are now and knows the path to launch with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">Before Your Call</span>
+                <h2 class="section-title">Get Answers to Your Biggest Questions</h2>
+            </div>
+            <div class="video-grid stagger-children">
+                <article class="video-card">
+                    <h3>Your Idea Is Safe: Our Ironclad Protection Promise</h3>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/Nyn6zxNUaRY" title="Will You Steal My Idea?" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p>Safety is our #1 priority. Your invention is always bound by our confidentiality agreement. We're inventors ourselves and partner with independent patent attorneys so there's never a conflict of interest.</p>
+                </article>
+                <article class="video-card">
+                    <h3>The Real Cost of Launching Your Invention</h3>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/4KGCQJn-zHY" title="The GOAT Calculator" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p>Our mission is to help you save time and money. We always start with the quickest, least expensive path. Your consultation reveals realistic costs, what to avoid, and why there are no surprise fees—ever.</p>
+                </article>
+                <article class="video-card">
+                    <h3>Success Story: From Napkin Sketch to Store Shelves</h3>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/-0yy3N9xUyw" title="Success Story" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p>Meet everyday inventors who turned their ideas into reality with For Sale By Inventor. Our products have reached major retailers nationwide.</p>
+                    <ul class="logo-list">
+                        <li>Walmart</li>
+                        <li>Amazon</li>
+                        <li>Dick's Sporting Goods</li>
+                        <li>Dunham's</li>
+                        <li>Toys R Us</li>
+                        <li>Sears</li>
+                    </ul>
+                </article>
+                <article class="video-card">
+                    <h3>Why Now Is the Perfect Time to Launch Your Invention</h3>
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/7cWNod3stIg" title="Why Now Is the Perfect Time" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <p>The invention landscape has never been more favorable. Manufacturing, crowdfunding, and e-commerce have eliminated traditional barriers. The question isn't if you should launch—it's when. The answer is now.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">What to Expect</span>
+                <h2 class="section-title">Here's Exactly What Will Happen on Your 15-Minute Call</h2>
+            </div>
+            <ol class="expectations-list stagger-children">
+                <li class="fade-up">
+                    <div class="expectations-icon">📋</div>
+                    <div>
+                        <h3>We'll Review Your Idea</h3>
+                        <p>We'll ask key questions to understand your invention and where you are in the process.</p>
+                    </div>
+                </li>
+                <li class="fade-up">
+                    <div class="expectations-icon">🔍</div>
+                    <div>
+                        <h3>Quick Preliminary Assessment</h3>
+                        <p>Expect an honest first impression about your invention's potential.</p>
+                    </div>
+                </li>
+                <li class="fade-up">
+                    <div class="expectations-icon">💡</div>
+                    <div>
+                        <h3>Next Steps Recommendation</h3>
+                        <p>Should you run a patent search or prototype first? We'll map out your smartest next moves.</p>
+                    </div>
+                </li>
+                <li class="fade-up">
+                    <div class="expectations-icon">💵</div>
+                    <div>
+                        <h3>Transparent Pricing</h3>
+                        <p>If moving forward makes sense, we'll outline exact costs—no pressure, no surprises.</p>
+                    </div>
+                </li>
+                <li class="fade-up">
+                    <div class="expectations-icon">❓</div>
+                    <div>
+                        <h3>Your Questions Answered</h3>
+                        <p>This is your time. Bring every question about the invention process.</p>
+                    </div>
+                </li>
+            </ol>
+            <div class="callout-box fade-up">
+                <p><strong>This is a consultation, not a sales pitch.</strong> Our goal is to give you clarity on whether your idea is worth pursuing and the realistic path forward.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">Real Feedback</span>
+                <h2 class="section-title">What Other Inventors Are Saying</h2>
+            </div>
+            <div class="testimonial-grid stagger-children">
+                <figure class="testimonial-card">
+                    <blockquote>
+                        <p>"My experience so far with For Sale By Inventor has been very positive; they are truly professional, honest, and transparent in conducting business. I feel very lucky to have them in my corner."</p>
+                    </blockquote>
+                    <figcaption>— Shorna Abrahams</figcaption>
+                </figure>
+                <figure class="testimonial-card">
+                    <blockquote>
+                        <p>"Glad they're on my team. I wouldn't be where I'm at without them. I've been working with For Sale By Inventor for years now and they're great, always answer questions, and have a very knowledgeable staff."</p>
+                    </blockquote>
+                    <figcaption>— Shea Kellogg</figcaption>
+                </figure>
+                <figure class="testimonial-card">
+                    <blockquote>
+                        <p>"I just wanted to thank Dale for being such a straightforward and quality agent. The invitation to submit my dream was clearly made easy with his description of a secure and superior operation."</p>
+                    </blockquote>
+                    <figcaption>— Lenny Wechsler</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">Common Questions</span>
+                <h2 class="section-title">Quick Answers Before Your Call</h2>
+            </div>
+            <div class="faq-container fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I know if I can trust someone with my invention?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Your idea is protected from day one under our confidentiality agreement. We're inventors ourselves, and we partner with independent patent counsel to ensure there's no conflict of interest.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How much does a patent cost?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Costs vary depending on complexity, but we always start with the quickest and least expensive path. Your consultant will share realistic ranges and how to avoid unnecessary spend.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does a patent guarantee financial success?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">No patent can guarantee success. That's why we focus on validation and market research to ensure your idea has real demand before you invest heavily.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I market my invention without a patent?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes, there are smart ways to gather feedback and test demand while still protecting your idea. We'll walk you through your safest options.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if I already have a patent pending?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Great! We can meet you where you are, whether you have sketches, prototypes, or a patent in process. We'll plan the next strategic steps together.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prepare Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container" style="text-align: center;">
+            <div class="fade-up">
+                <span class="section-label">Get Ready</span>
+                <h2 class="section-title">Get the Most Out of Your Call — Do This First</h2>
+                <ul class="prepare-checklist">
+                    <li>
+                        <span class="check-box">☐</span>
+                        Write down your three biggest questions about your invention.
+                    </li>
+                    <li>
+                        <span class="check-box">☐</span>
+                        Sketch your idea — even a rough napkin sketch helps.
+                    </li>
+                    <li>
+                        <span class="check-box">☐</span>
+                        Think about the problem you solve and who would buy it.
+                    </li>
+                    <li>
+                        <span class="check-box">☐</span>
+                        Have a pen and paper ready to take notes.
+                    </li>
+                    <li>
+                        <span class="check-box">☐</span>
+                        Be in a quiet place where you can focus for 15 minutes.
+                    </li>
+                </ul>
+                <a href="#schedule" class="btn btn-primary">Book Your Call Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="fade-up">
+                <h2>We're Excited to Talk With You!</h2>
+                <div class="final-cta-actions">
+                    <a href="#schedule" class="btn btn-primary">Book Your Call</a>
+                    <a href="#schedule" class="btn btn-secondary">Change My Appointment</a>
+                </div>
+                <div class="contact-info">
+                    <p><strong>Questions before your call?</strong></p>
+                    <ul>
+                        <li>📞 Call us: <a href="tel:18553453728">855-345-3728</a></li>
+                        <li>📧 <a href="mailto:info@forsalebyinventor.com">info@forsalebyinventor.com</a></li>
+                    </ul>
+                    <p class="ps-note">P.S. Can't make it? Use the reschedule link in your confirmation email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo"><img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor"></div>
+                <p class="footer-desc">The Un-Invention Company™ — Transparent, honest, and dedicated to the inventor's success for over 15 years.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="https://forsalebyinventor.com/book-call/">Full-Service Concierge</a></li>
+                        <li><a href="https://patents4less.com/">Patents4Less (DIY)</a></li>
+                        <li><a href="https://forsalebyinventor.com/book-call/">SPARK Report</a></li>
+                        <li><a href="https://forsalebyinventor.com/products/">Virtual Tradeshow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Free Resources</h4>
+                    <ul>
+                        <li><a href="https://launch.forsalebyinventor.com/inventor-kit/">Inventor Kit</a></li>
+                        <li><a href="https://forsalebyinventor.com/invention-validation-calculator/">GOAT Calculator</a></li>
+                        <li><a href="https://forsalebyinventor.com/inventors-insight-quiz/">Inventor Quiz</a></li>
+                        <li><a href="https://forsalebyinventor.com/book-call/">Idea Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="reviews-and-reputation.html">Reviews</a></li>
+                        <li><a href="https://forsalebyinventor.com/client-success-stories/">Success Stories</a></li>
+                        <li><a href="https://forsalebyinventor.com/contact/">Contact</a></li>
+                        <li><a href="https://forsalebyinventor.com/inventor-resources/">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> For Sale By Inventor: The Un-Invention Company™. All rights reserved.</p>
+            <p style="font-size: 0.8rem; max-width: 600px;">For Sale By Inventor is not a law firm. Information on this website is for educational and marketing purposes only. All legal services are provided by independent, licensed patent attorneys.</p>
+            <div class="footer-legal">
+                <a href="https://forsalebyinventor.com/privacy-policy/">Privacy Policy</a>
+                <a href="https://forsalebyinventor.com/terms-and-conditions/">Terms of Service</a>
+                <a href="https://forsalebyinventor.com/contact/">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
