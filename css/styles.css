@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ==========================================================================
-   CSS Variables
+   CSS Variables - Dark Theme (Default)
    ========================================================================== */
 :root {
     --color-bg: #0a0a0f;
@@ -28,6 +28,73 @@
     --radius-lg: 24px;
     --shadow: 0 4px 24px rgba(0,0,0,0.4);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   CSS Variables - Light Theme
+   ========================================================================== */
+body.light-mode {
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f7fa;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #f0f2f5;
+    --color-primary: #256099;
+    --color-primary-light: #3a7ab8;
+    --color-primary-dark: #1a4670;
+    --color-accent: #ef6a27;
+    --color-accent-light: #ff8a4c;
+    --color-accent-soft: rgba(239, 106, 39, 0.1);
+    --color-text: #1a1a2e;
+    --color-text-muted: #4a5568;
+    --color-text-subtle: #718096;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-border: rgba(0,0,0,0.1);
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Light mode specific overrides */
+body.light-mode .nav {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--color-border);
+}
+
+body.light-mode .hero {
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+}
+
+body.light-mode .btn-secondary {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+body.light-mode .btn-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+body.light-mode footer {
+    background: #1a1a2e;
+    color: #f4f4f6;
+}
+
+body.light-mode footer .footer-desc,
+body.light-mode footer .footer-col a,
+body.light-mode footer .footer-bottom {
+    color: #9ca3af;
+}
+
+body.light-mode footer .footer-col h4 {
+    color: #f4f4f6;
+}
+
+body.light-mode .hero-badge {
+    background: var(--color-primary);
+    color: white;
+}
+
+body.light-mode .hero-badge svg {
+    fill: var(--color-accent);
 }
 
 /* ==========================================================================
@@ -140,7 +207,7 @@ img {
 .nav-cta {
     padding: 0.75rem 1.5rem;
     background: var(--color-primary);
-    color: var(--color-bg) !important;
+    color: white !important;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
@@ -149,6 +216,54 @@ img {
 .nav-cta:hover {
     background: var(--color-primary-light);
     transform: translateY(-2px);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-right: 1rem;
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface-elevated);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-text);
+    transition: var(--transition);
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+body.light-mode .theme-toggle .icon-sun {
+    display: block;
+}
+
+body.light-mode .theme-toggle .icon-moon {
+    display: none;
+}
+
+body.light-mode .theme-toggle {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border);
 }
 
 /* ==========================================================================
