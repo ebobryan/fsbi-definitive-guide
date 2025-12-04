@@ -332,6 +332,13 @@
             align-items: center;
         }
 
+        .founder-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+        }
+
         .founder-image-placeholder {
             aspect-ratio: 4/5;
             background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-elevated) 100%);
@@ -350,8 +357,8 @@
             position: absolute;
             bottom: -1rem;
             right: -1rem;
-            background: var(--color-primary);
-            color: var(--color-bg);
+            background: var(--color-accent);
+            color: white;
             padding: 1rem 1.5rem;
             border-radius: var(--radius);
             font-size: 0.8rem;
@@ -519,7 +526,7 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
-                For Sale By <span>Inventor</span>
+                <img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor">
             </a>
             <ul class="nav-links">
                 <li><a href="#trust">Trust</a></li>
@@ -912,15 +919,13 @@
         <div class="container">
             <div class="founder-grid">
                 <div class="fade-up" style="position: relative;">
-                    <div class="founder-image-placeholder">NM</div>
+                    <img src="https://forsalebyinventor.com/wp-content/uploads/2025/12/neil-square.jpg" alt="Neil Montgomery, Founder & CEO" class="founder-image">
                     <div class="founder-badge">Founder & CEO</div>
                 </div>
                 <div class="fade-up">
                     <h2 class="section-title">Our Founder's Story</h2>
                     <p style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">Our CEO, Neil Montgomery, is an inventor himself. He has faced the same challenges, the same fears, and the same online criticism for his own products. He built FSBI to be the company he wished he had when he was starting out: transparent, honest, and dedicated to the inventor's success.</p>
-                    <blockquote class="founder-quote">
-                        "The first review of my product on Amazon pointed out an easily fixable flaw that didn't come up in testing that improved my product overall. The reviews since have been positive which have helped grow sales. It's important to listen to all feedback whether or not the review is positive or negative in nature."
-                    </blockquote>
+                    <blockquote class="founder-quote">"The first review of my product on Amazon pointed out an easily fixable flaw that didn't come up in testing that improved my product overall. The reviews since have been positive which have helped grow sales. It's important to listen to all feedback whether or not the review is positive or negative in nature."</blockquote>
                     <p style="font-weight: 600; color: var(--color-text);">Neil Montgomery <span style="font-weight: 400; color: var(--color-text-muted);">— Founder & CEO, For Sale By Inventor</span></p>
                 </div>
             </div>
@@ -1039,7 +1044,7 @@
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
-                <div class="footer-logo">For Sale By <span>Inventor</span></div>
+                <div class="footer-logo"><img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor"></div>
                 <p class="footer-desc">The Un-Invention Company™ — Transparent, honest, and dedicated to the inventor's success for over 15 years.</p>
             </div>
             <div class="footer-links">
