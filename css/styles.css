@@ -10,11 +10,12 @@
     --color-bg-alt: #12121a;
     --color-surface: #1a1a24;
     --color-surface-elevated: #242432;
-    --color-primary: #c9a227;
-    --color-primary-light: #e8c547;
-    --color-primary-dark: #a68520;
-    --color-accent: #3b82f6;
-    --color-accent-soft: rgba(59, 130, 246, 0.15);
+    --color-primary: #256099;
+    --color-primary-light: #3a7ab8;
+    --color-primary-dark: #1a4670;
+    --color-accent: #ef6a27;
+    --color-accent-light: #ff8a4c;
+    --color-accent-soft: rgba(239, 106, 39, 0.15);
     --color-text: #f4f4f6;
     --color-text-muted: #9ca3af;
     --color-text-subtle: #6b7280;
@@ -110,16 +111,13 @@ img {
 }
 
 .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--color-text);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 }
 
-.nav-logo span {
-    color: var(--color-primary);
+.nav-logo img {
+    height: 45px;
+    width: auto;
 }
 
 .nav-links {
@@ -1161,13 +1159,12 @@ footer {
 }
 
 .footer-logo {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.footer-logo span {
-    color: var(--color-primary);
+.footer-logo img {
+    height: 50px;
+    width: auto;
 }
 
 .footer-desc {
