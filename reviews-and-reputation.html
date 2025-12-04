@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sale By Inventor Reviews: The Good, The Bad, and The Truth</title>
+    <meta name="description" content="For over 15 years, we've been the subject of both praise and criticism. This page is our commitment to full transparency. We hide from nothing.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Hero for reviews page */
+        .reviews-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+        }
+
+        .reviews-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(37, 96, 153, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .reviews-hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviews-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviews-hero h1 em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        .reviews-hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Rating summary badge */
+        .rating-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 0.25rem;
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+
+        .rating-text {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+        }
+
+        .rating-text strong {
+            color: var(--color-text);
+        }
+
+        /* AI Summary Box */
+        .ai-summary {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            position: relative;
+        }
+
+        .ai-summary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .ai-summary-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .ai-summary h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .ai-summary p {
+            color: var(--color-text-muted);
+            line-height: 1.9;
+        }
+
+        /* Review cards */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .review-stars span {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-bg);
+        }
+
+        .author-info h4 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--color-text-subtle);
+        }
+
+        /* Warning section */
+        .warning-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-section::before {
+            content: '"';
+            position: absolute;
+            top: 4rem;
+            left: 5%;
+            font-family: var(--font-display);
+            font-size: 20rem;
+            line-height: 1;
+            color: rgba(239, 68, 68, 0.05);
+            pointer-events: none;
+        }
+
+        .warning-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .graveyard-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .graveyard-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .graveyard-item::before {
+            content: '†';
+            margin-right: 0.5rem;
+            color: #ef4444;
+        }
+
+        /* Negative reviews */
+        .negative-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid #ef4444;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .negative-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .negative-quote {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .response-box {
+            background: rgba(37, 96, 153, 0.1);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .response-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .response-text {
+            color: var(--color-text-muted);
+            line-height: 1.8;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .comparison-table thead th {
+            background: var(--color-surface-elevated);
+            color: var(--color-text);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .comparison-table thead th:last-child {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            color: white;
+        }
+
+        .comparison-table tbody tr:hover td {
+            background: rgba(37, 96, 153, 0.05);
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .comparison-table td:last-child {
+            background: rgba(37, 96, 153, 0.08);
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        .table-negative {
+            color: #ef4444;
+        }
+
+        .table-positive {
+            color: var(--color-success);
+        }
+
+        /* Money back section */
+        .money-back-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .money-back-section h2 {
+            color: white;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .money-back-section p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .money-back-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: white;
+            color: var(--color-primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Founder section */
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founder-image-placeholder {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-elevated) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            position: relative;
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            background: var(--color-accent);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .founder-quote {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--color-text);
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-primary);
+            margin: 2rem 0;
+        }
+
+        /* Big quote */
+        .big-quote {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--color-accent);
+            margin: 2rem 0;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* CTA buttons row */
+        .cta-buttons-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Info cards grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .info-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .info-card p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Split content */
+        .split-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* Features list */
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            color: var(--color-text-muted);
+        }
+
+        .features-list .check {
+            width: 24px;
+            height: 24px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        /* References */
+        .references {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .references h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .references p {
+            font-size: 0.85rem;
+            color: var(--color-text-subtle);
+            margin-bottom: 0.5rem;
+        }
+
+        .references a {
+            color: var(--color-primary);
+            word-break: break-all;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .reviews-grid,
+            .split-content,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reviews-hero {
+                padding: 7rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .rating-summary {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem 1.5rem;
+            }
+
+            .big-quote {
+                font-size: 1.4rem;
+                padding: 1.5rem;
+            }
+
+            .comparison-table-wrapper {
+                overflow-x: auto;
+            }
+
+            .comparison-table {
+                min-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </button>
+            <a href="https://forsalebyinventor.com/book-call/" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="reviews-hero">
+        <div class="reviews-hero-content fade-up">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                The Un-Invention Company™ — 15+ Years in Business
+            </div>
+            <h1>For Sale By Inventor Reviews: <em>The Good, The Bad, and The Truth</em></h1>
+            <p class="reviews-hero-subtitle">For over 15 years, we have been the subject of both praise and criticism in online reviews. We've even been the target of a coordinated online attack. This page is our commitment to full transparency. We will show you everything: our 5-star reviews, our 1-star reviews, and our direct, honest responses. <strong>We hide from nothing.</strong></p>
+            <div class="rating-summary">
+                <div class="rating-stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="rating-text">
+                    <strong>4.6 out of 5</strong> — Based on 200+ verified reviews
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Summary Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="ai-summary fade-up">
+                <div class="ai-summary-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    What Our Reviews Say
+                </div>
+                <h3>For Sale By Inventor: What Our Reviews Say</h3>
+                <p>Based on over 200 verified reviews across Google, Trustpilot, and the BBB, For Sale By Inventor (FSBI) holds an average rating of <strong>4.6 out of 5 stars</strong>. The company is noted for its transparent, fee-for-service model, where inventors retain 100% ownership of their ideas. Positive reviews frequently praise specific team members for their guidance, communication, and ability to make the patenting process less intimidating. Common negative themes center on misunderstandings about the company's role (FSBI does not invest in ideas or guarantee sales) and communication delays, which the company addresses with a money-back promise for research services and a commitment to fixed fees with no obligation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Warning Section -->
+    <section class="warning-section" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="max-width: 900px;">
+                <div class="warning-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                    Industry Warning
+                </div>
+                <h2 class="section-title">The Invention Industry: A Minefield of Scams</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">The invention promotion industry is notoriously difficult for inventors to navigate. For every legitimate company, there are dozens of predatory firms looking to take advantage of the hopes and dreams of creators. The most infamous example is <strong style="color: var(--color-text);">World Patent Marketing (WPM)</strong>, a company that was shut down by the Federal Trade Commission (FTC) in 2017 after it was found to have defrauded inventors out of more than <strong style="color: #ef4444;">$26 million</strong>.</p>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">WPM operated on a model of deception. They made grandiose promises of wealth and success, charged exorbitant fees for services that were often never rendered, and used threats and intimidation to silence dissatisfied customers. Their actions cast a long shadow over the entire industry, making it harder for honest inventors to find trustworthy partners.</p>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">But this is not a new problem. Back in the 1990s, the Federal Trade Commission launched <strong style="color: var(--color-text);">Operation Mousetrap</strong>, a major law enforcement sweep that targeted fraudulent invention promotion firms that had collected over <strong style="color: #ef4444;">$90 million</strong> from inventors with false promises.</p>
+                <p style="color: var(--color-text); margin-bottom: 2rem; line-height: 1.9;"><strong>We have been in business through all of it</strong>—the dot-com bust, the 2008 financial crisis, the rise of social media, and multiple FTC crackdowns. We have operated under the microscope of the FTC for over 15 years and have <strong style="color: var(--color-success);">never faced a single sanction</strong>. The same cannot be said for many others in this industry.</p>
+            </div>
+
+            <div class="fade-up" style="margin-top: 3rem;">
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-text);">The Invention Company Graveyard</h3>
+                <p style="color: var(--color-text-muted); margin-bottom: 1rem;">It's a tough business. Many companies don't survive, especially those that don't listen to their customers:</p>
+                <div class="graveyard-list">
+                    <div class="graveyard-item">World Patent Marketing</div>
+                    <div class="graveyard-item">Patent & Trademark Institute (PTI)</div>
+                    <div class="graveyard-item">Davison & Associates, Inc.</div>
+                    <div class="graveyard-item">American Inventors Corporation</div>
+                    <div class="graveyard-item">National Idea Network, Inc.</div>
+                    <div class="graveyard-item">Eureka Solutions International, Inc.</div>
+                    <div class="graveyard-item">Harshaw Research</div>
+                    <div class="graveyard-item">Absolutely New</div>
+                </div>
+                <p style="color: var(--color-text); margin-top: 2rem; font-size: 1.1rem;"><strong>These companies didn't hear the warnings or the negative sentiment from inventors. We have. That's why we're still here.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Astroturfing Warning -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="split-content">
+                <div class="fade-up">
+                    <span class="section-label">Beware of Fake Reviews</span>
+                    <h2 class="section-title">The Dangers of Astroturfing</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">One of the tactics used by companies like WPM is "astroturfing"—posting fake positive reviews to create a false sense of credibility.</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">As our founder, Neil Montgomery, wrote in his blog post "The Good, Bad & Ugly of Online Reviews," you should be wary if you see a product or service with <strong style="color: var(--color-text);">all 5-star positive reviews from people who have only ever reviewed that one product</strong>. It's a classic sign of a company trying to manipulate its online reputation.</p>
+                    <p style="color: var(--color-text); line-height: 1.9;"><strong>A lack of any negative reviews can actually be a red flag.</strong></p>
+                </div>
+                <div class="fade-up">
+                    <div style="background: var(--color-surface); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--color-border);">
+                        <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-primary);">The Un-Invention Company</h3>
+                        <p style="color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.8;">We are not an invention promotion company. We are <strong style="color: var(--color-text);">The Un-Invention Company</strong>, a new model built from the lessons learned from the failures of others.</p>
+                        <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.8;">We built our entire model based on the feedback and reviews of real inventors who were tired of the status quo. We saw what was broken in the industry—the false promises, the hidden fees, the lack of transparency—and we built a new way.</p>
+                        <a href="https://forsalebyinventor.com/book-call/" class="btn btn-primary">Learn About Our SPARK Call →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section id="comparison" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">See The Difference</span>
+                <h2 class="section-title">FSBI vs. Invention Companies vs. Patent Attorneys</h2>
+                <p style="color: var(--color-text-muted);">A cost and review comparison to help you make an informed decision.</p>
+            </div>
+            <div class="fade-up comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Invention Promotion Companies</th>
+                            <th>Patent Attorneys</th>
+                            <th>For Sale By Inventor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Typical Cost</td>
+                            <td class="table-negative">$10,000 - $25,000+</td>
+                            <td>$8,000 - $15,000+ (hourly)</td>
+                            <td class="table-positive">Fixed fees, starting at a few thousand dollars</td>
+                        </tr>
+                        <tr>
+                            <td>Ownership</td>
+                            <td class="table-negative">Often demand a percentage</td>
+                            <td class="table-positive">You retain 100%</td>
+                            <td class="table-positive">You retain 100%</td>
+                        </tr>
+                        <tr>
+                            <td>Services</td>
+                            <td class="table-negative">Vague promises, often useless</td>
+                            <td>Legal services only</td>
+                            <td class="table-positive">Research, patenting, marketing, licensing support</td>
+                        </tr>
+                        <tr>
+                            <td>Transparency</td>
+                            <td class="table-negative">Low (hidden fees, false promises)</td>
+                            <td>High (but limited scope)</td>
+                            <td class="table-positive">High (fixed fees, no obligation, money-back promise)</td>
+                        </tr>
+                        <tr>
+                            <td>Common Review Theme</td>
+                            <td class="table-negative">"Scam," "took my money," "no results"</td>
+                            <td>"Expensive," "slow," "didn't understand my idea"</td>
+                            <td class="table-positive">"Transparent," "helpful," "great communication"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Star Reviews Section -->
+    <section id="reviews" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">What We Do Right</span>
+                <h2 class="section-title">Our 5-Star Reviews</h2>
+                <p style="color: var(--color-text-muted);">These are paraphrased summaries of verified reviews from Google, Trustpilot, and the BBB; you can read the originals on those platforms.</p>
+            </div>
+            <div class="reviews-grid stagger-children">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"One inventor praised Mike and Rose for designing a patent-pending product at a fair cost without pushy sales tactics, and said FSBI 'brought their idea to life'."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">WC</div>
+                        <div class="author-info">
+                            <h4>Willie Crawley</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"An inventor was grateful for Mike Marino's positive guidance and upbeat energy, calling him a guiding force in their creative project."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Mad.Scientist</h4>
+                            <p>Trustpilot Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"A client expressed immense gratitude for the team's commitment to her success, saying she couldn't have made her dreams a reality without their support and guidance."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">AD</div>
+                        <div class="author-info">
+                            <h4>aziana d</h4>
+                            <p>BBB Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"One inventor highlighted the welcoming team and the clear, step-by-step information provided, and appreciated the consistent communication."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-info">
+                            <h4>Shirley Curtis</h4>
+                            <p>Trustpilot Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"A client felt comfortable with the thorough answers provided by Kurt, even though the amount of information was initially overwhelming."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">TB</div>
+                        <div class="author-info">
+                            <h4>Tamara Bush</h4>
+                            <p>Trustpilot Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"An inventor was happy with the service, noting that the team helped him get off the ground with his first patent and took the time to explain everything."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">JF</div>
+                        <div class="author-info">
+                            <h4>Jason Fletcher sia</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"A client described her experience as pleasant, noting that the team followed through on their promises and walked her through every step of the process."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h4>Roxanne Stone</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="review-text">"An inventor praised Heather for her patience in explaining every step of the process for his first patent."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">MH</div>
+                        <div class="author-info">
+                            <h4>Mark Hughes</h4>
+                            <p>Google Review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Money Back Promise Section -->
+    <section class="money-back-section">
+        <div class="container">
+            <div class="fade-up">
+                <h2>How We Handle 1-Star Reviews: Our Money-Back Promise</h2>
+                <p>We are one of the very few companies in the invention industry to offer a money-back promise for our research services. If we can't find a path forward for your idea after the research phase, we will refund your research fee. This is our commitment to you.</p>
+                <p style="opacity: 0.9;">We built this promise directly in response to negative reviews from inventors who felt they were sold services they didn't need. <strong>We listen. We adapt. We improve.</strong></p>
+                <div class="money-back-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Money-Back Promise on Research Services
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1-Star Reviews Section -->
+    <section style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">Where We Can Improve</span>
+                <h2 class="section-title">The 1-Star Reviews</h2>
+                <p style="color: var(--color-text-muted);">We value all feedback, especially the critical kind. It helps us improve. Here are the most common themes from our 1-star reviews, and our direct responses. We believe these reviews are just as important as the 5-star ones.</p>
+            </div>
+
+            <div class="stagger-children">
+                <div class="negative-card fade-up">
+                    <h3>"They won't invest in my idea!"</h3>
+                    <p class="negative-quote">"They're good as long as you have money, like any business! But they won't invest anything!!!! Even to make MONEY!!!"</p>
+                    <div class="response-box">
+                        <div class="response-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                            Our Response
+                        </div>
+                        <p class="response-text">We understand this perspective, and we are very clear about our role: For Sale By Inventor is a service-based company, not an investment firm. This is intentional. It would be a conflict of interest for us to invest in some ideas and not others. Our fee-for-service model ensures that you, the inventor, retain 100% ownership and control of your idea. We provide the expertise to give your invention its best chance, but the financial risk and reward remain with you.</p>
+                    </div>
+                </div>
+
+                <div class="negative-card fade-up">
+                    <h3>"They didn't get me a deal!"</h3>
+                    <p class="negative-quote">"No one has responded to me yet. No phone call or email. I am concerned about this."</p>
+                    <div class="response-box">
+                        <div class="response-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                            Our Response
+                        </div>
+                        <p class="response-text">We can't guarantee results, and any company that does is not being truthful. The invention industry has a very low success rate. Our role is to create professional marketing materials and submit them to companies in your target industry. We provide you with a list of companies we contact, but we cannot force them to respond or make a deal. We offer a money-back promise for our research services if we can't find a path forward for your idea.</p>
+                    </div>
+                </div>
+
+                <div class="negative-card fade-up">
+                    <h3>"They stole my idea!"</h3>
+                    <p class="negative-quote">"I told them my biggest concern was someone stealing my idea...They then told me they couldn't help me!"</p>
+                    <div class="response-box">
+                        <div class="response-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                            Our Response
+                        </div>
+                        <p class="response-text">We have never and will never steal an idea. We are bound by a Non-Disclosure Agreement (NDA) with every person who contacts us. This protects both you and us. Every person who signs up is given a time-stamped copy of this NDA, which you can review at <a href="https://launch.forsalebyinventor.com/inventor-kit/" target="_blank">our Inventor Kit page</a>. Additionally, all FSBI employees are required to sign NDAs. We take this very seriously. We do not develop inventions or bring them to market ourselves, and we have never profited from someone's invention without their consent.</p>
+                    </div>
+                </div>
+
+                <div class="negative-card fade-up">
+                    <h3>"It costs too much!"</h3>
+                    <p class="negative-quote">"I cant rate something that hasn't done anything for me but send me a bill."</p>
+                    <div class="response-box">
+                        <div class="response-label">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                            Our Response
+                        </div>
+                        <p class="response-text">We charge fees for our services, but we keep them reasonable compared to other companies and patent attorneys. We offer fixed fees with no obligation, so you know the full cost upfront. The main issue with patents is getting them issued, and our expertise helps streamline that process, which can save you money in the long run. We also offer a money-back promise for our research services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Question Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="max-width: 900px; margin: 0 auto;">
+                <span class="section-label">A Common Question</span>
+                <h2 class="section-title">"Why Don't You Just Buy My Idea?"</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">We hear this a lot, often from frustrated inventors who have been burned by other companies. They'll say, "If my idea is so good, why don't you just run with it and we'll split it 90-10? I keep 90, you keep 10." We want to address this head-on.</p>
+                
+                <div class="big-quote">
+                    "Ideas are like armpits: everyone has at least two, and they usually stink... unless you act on them."
+                </div>
+                
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">An idea is just the starting point. The real value comes from the <strong style="color: var(--color-text);">execution</strong>: the research, the patenting process, the marketing, the manufacturing, the distribution. This requires significant investment of time, money, and resources.</p>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;"><strong style="color: var(--color-text);">We are not Shark Tank.</strong> Our role is to provide the expertise and services to help you execute on your idea. Why would anyone invest a single dollar in your idea if you don't feel it's worth investing any of your own?</p>
+                <p style="color: var(--color-text); line-height: 1.9;"><strong>We believe in empowering inventors to build their own success, not in taking a piece of it.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees Section -->
+    <section style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="split-content">
+                <div class="fade-up">
+                    <span class="section-label">Setting Expectations</span>
+                    <h2 class="section-title">A Note on Guarantees</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">We are often asked if we can guarantee success. We also hear this a lot: "I'll only pay if you guarantee results." <strong style="color: var(--color-text);">The answer is no.</strong></p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">No one can guarantee results. The invention industry is inherently risky, and any company that promises you a guaranteed hit product is not being truthful.</p>
+                    <p style="color: var(--color-text); line-height: 1.9;"><strong>What we can guarantee is a transparent, professional process designed to help you avoid the most common and costly pitfalls that inventors face.</strong></p>
+                </div>
+                <div class="fade-up">
+                    <div style="background: var(--color-surface); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--color-border);">
+                        <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-text);">We Help You With:</h3>
+                        <ul class="features-list">
+                            <li>
+                                <span class="check">✓</span>
+                                <span><strong style="color: var(--color-text);">Thorough Research:</strong> To ensure your idea is unique and has a market.</span>
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                <span><strong style="color: var(--color-text);">Proper Patenting:</strong> To protect your intellectual property.</span>
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                <span><strong style="color: var(--color-text);">Professional Marketing:</strong> To give your idea the best possible chance of being seen by the right people.</span>
+                            </li>
+                        </ul>
+                        <p style="color: var(--color-text-muted); margin-top: 1.5rem; font-style: italic;">Our goal is not to promise you a lottery ticket, but to give you a roadmap and the tools to navigate the difficult journey of bringing an invention to market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Clients Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="max-width: 900px; margin: 0 auto;">
+                <span class="section-label">Privacy & Transparency</span>
+                <h2 class="section-title">A Note on Speaking with Past Clients</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">We are incredibly proud of our successful clients, and we showcase their stories through verified reviews, video testimonials, and case studies across our website and social media channels. We are often asked if we can provide contact information for these clients for a direct conversation.</p>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">In the past, we did provide this information. Unfortunately, we had to stop this practice. Our clients are busy people, and we found that their time was not being respected, with calls coming in at all hours of the day and night. <strong style="color: var(--color-text);">To protect our clients' privacy and time, we no longer give out their personal contact information.</strong></p>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">Instead, we have made a significant effort to provide a wealth of public-facing proof. We encourage you to read the dozens of verified reviews on Google, Trustpilot, and the BBB, and to watch the video testimonials on our YouTube channel. These resources provide a transparent and comprehensive look at the experiences of our clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="founder-grid fade-up">
+                <div class="founder-image-placeholder">
+                    NM
+                    <div class="founder-badge">Founder & CEO</div>
+                </div>
+                <div>
+                    <span class="section-label">Our Founder's Story</span>
+                    <h2 class="section-title">A Commitment to Inventors</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">Our CEO, Neil Montgomery, is an inventor himself. He has faced the same challenges, the same fears, and the same online criticism for his own products. He built FSBI to be the company he wished he had when he was starting out: <strong style="color: var(--color-text);">transparent, honest, and dedicated to the inventor's success</strong>.</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">He reads every review, and uses that feedback to learn and grow. This is not just a business for us; it's a mission.</p>
+                    <blockquote class="founder-quote">
+                        "The first review of my product on Amazon pointed out an easily fixable flaw that didn't come up in testing that improved my product overall. The reviews since have been positive which have helped grow sales. It's important to listen to all feedback whether or not the review is positive or negative in nature."
+                    </blockquote>
+                    <p style="color: var(--color-text); font-weight: 600;">— Neil Montgomery, Founder & CEO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Use Feedback -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-label">Continuous Improvement</span>
+                <h2 class="section-title">How We Use Your Feedback & Reviews</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 2rem; line-height: 1.9;">We take every review seriously. Much of our service offering today is a direct result of client feedback. From our money-back promise for research to our fixed-fee structure, we are constantly evolving to better serve the inventor community.</p>
+                <p style="color: var(--color-text); font-size: 1.2rem;"><strong>Your feedback, good or bad, is a gift. These reviews are the foundation of our business.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">Common Questions</span>
+                <h2 class="section-title">FAQ: Reviews, Complaints, and Legitimacy</h2>
+            </div>
+            <div class="faq-container fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is For Sale By Inventor a scam?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">No, For Sale By Inventor is a legitimate business based in Canonsburg, Pennsylvania, with over 15 years of experience and an A+ rating from the BBB. We provide fee-for-service product development and marketing services.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why do I see negative posts about you online?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">The invention industry has a high failure rate, and some clients with unrealistic expectations may post negative reviews. We address these concerns transparently on our website and in our "Bathroom Wall Journalism" article.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Have you ever been sued?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">To date, For Sale By Inventor has not been sued over its services. We address false online claims of lawsuits in our Bathroom Wall Journalism article.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you invest in ideas?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">No, we do not invest in ideas. This is to avoid a conflict of interest. Our fee-for-service model ensures that you, the inventor, retain 100% ownership and control of your idea.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your money-back promise?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We offer a money-back promise for our research services. If we can't find a path forward for your idea after the research phase, we will refund your research fee.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How should I evaluate online reviews about invention companies?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Look for patterns. Are the reviews specific? Do they mention team members by name? Does the company respond to negative reviews? A lack of any negative reviews can be a red flag. A company with a long history and a mix of real, detailed reviews is often more trustworthy.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What should I do if I read something negative?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Consider the source. Is it an anonymous post on a forum, or a verified review on a platform like the BBB or Trustpilot? Does the company offer a public response? We encourage you to read both the good and the bad, and then decide for yourself.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your success rate?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">It's impossible to give a specific success rate, as so much depends on the invention itself, market conditions, and the inventor's own efforts. We can't guarantee success, but we can guarantee a transparent, professional process to give your idea its best shot.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What are your fees?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We offer fixed fees with no obligation, so you know the full cost upfront. Our fees are competitive with patent attorneys and significantly more transparent than most invention promotion companies.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you protect my idea?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We are bound by a Non-Disclosure Agreement (NDA) with every person who contacts us. This protects both you and us. Every person who signs up is given a time-stamped copy of this NDA. Additionally, all FSBI employees are required to sign NDAs.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is "Bathroom Wall Journalism"?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">This is a term we use to describe anonymous, unsubstantiated claims made on the internet. We address this in detail in our blog post of the same name.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you handle bad reviews?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We listen to them. We respond to them. And we learn from them. Many of our best policies, like our money-back promise, came directly from addressing the concerns raised in negative reviews.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why should I trust you?
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Because we are transparent. We show you the good, the bad, and the ugly. We have a long track record, an A+ rating from the BBB, and a commitment to the inventor community. We encourage you to do your research, read our reviews, and then make an informed decision.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- References -->
+            <div class="references fade-up">
+                <h4>References</h4>
+                <p>[1] Federal Trade Commission. (2017). World Patent Marketing. <a href="https://www.ftc.gov/legal-library/browse/cases-proceedings/172-3010-x170024-world-patent-marketing" target="_blank">https://www.ftc.gov/legal-library/browse/cases-proceedings/172-3010-x170024-world-patent-marketing</a></p>
+                <p>[2] Federal Trade Commission. (1997). FTC/State "Project Mousetrap" Snares Invention Promotion Industry. <a href="https://www.ftc.gov/news-events/news/press-releases/1997/07/ftcstate-project-mousetrap-snares-invention-promotion-industry" target="_blank">https://www.ftc.gov/news-events/news/press-releases/1997/07/ftcstate-project-mousetrap-snares-invention-promotion-industry</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container" style="text-align: center;">
+            <div class="fade-up">
+                <h2 class="section-title">Leave Your Own Review</h2>
+                <p style="color: var(--color-text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto 2.5rem;">We invite you to share your experience with us. Your feedback helps us improve and helps other inventors make informed decisions.</p>
+                <div class="cta-buttons-row">
+                    <a href="https://www.google.com/maps/place/For+Sale+By+Inventor/" class="btn btn-primary" target="_blank">Review on Google →</a>
+                    <a href="https://www.trustpilot.com/review/forsalebyinventor.com" class="btn btn-secondary" target="_blank">Review on Trustpilot</a>
+                    <a href="https://www.bbb.org/us/pa/canonsburg/profile/product-development-and-marketing/montgomery-ip-associates-lp-0141-53000334" class="btn btn-secondary" target="_blank">Review on BBB</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo"><img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor"></div>
+                <p class="footer-desc">The Un-Invention Company™ — Transparent, honest, and dedicated to the inventor's success for over 15 years.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Review Platforms</h4>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/place/For+Sale+By+Inventor/" target="_blank">Google Reviews</a></li>
+                        <li><a href="https://www.trustpilot.com/review/forsalebyinventor.com" target="_blank">Trustpilot</a></li>
+                        <li><a href="https://www.bbb.org/us/pa/canonsburg/profile/product-development-and-marketing/montgomery-ip-associates-lp-0141-53000334" target="_blank">Better Business Bureau</a></li>
+                        <li><a href="https://www.yelp.com/biz/for-sale-by-inventor-canonsburg" target="_blank">Yelp</a></li>
+                        <li><a href="https://www.consumeraffairs.com/business/for-sale-by-inventor.html" target="_blank">Consumer Affairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://launch.forsalebyinventor.com/inventor-kit/">Inventor Kit</a></li>
+                        <li><a href="https://forsalebyinventor.com/invention-validation-calculator/">GOAT Calculator</a></li>
+                        <li><a href="https://forsalebyinventor.com/">Main Website</a></li>
+                        <li><a href="index.html">Definitive Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>References</h4>
+                    <ul>
+                        <li><a href="https://www.ftc.gov/legal-library/browse/cases-proceedings/172-3010-x170024-world-patent-marketing" target="_blank">FTC: World Patent Marketing</a></li>
+                        <li><a href="https://www.ftc.gov/news-events/news/press-releases/1997/07/ftcstate-project-mousetrap-snares-invention-promotion-industry" target="_blank">FTC: Operation Mousetrap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 For Sale By Inventor: The Un-Invention Company™. All rights reserved.</p>
+            <p style="font-size: 0.8rem; max-width: 500px;">A+ Rated by the Better Business Bureau. Canonsburg, Pennsylvania.</p>
+            <div class="footer-legal">
+                <a href="https://forsalebyinventor.com/privacy-policy/">Privacy Policy</a>
+                <a href="https://forsalebyinventor.com/terms-and-conditions/">Terms of Service</a>
+                <a href="https://forsalebyinventor.com/contact/">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "For Sale By Inventor",
+        "url": "https://forsalebyinventor.com/",
+        "logo": "https://forsalebyinventor.com/wp-content/uploads/2021/08/logo.png",
+        "sameAs": [
+            "https://www.google.com/maps/place/For+Sale+By+Inventor/@40.293746,-80.174841,17z/data=!4m8!3m7!1s0x8834541d13b82189:0x310379ff6e4b5897!8m2!3d40.293746!4d-80.174841!9m1!1b1!16s%2Fg%2F1tdz5gv0",
+            "https://www.trustpilot.com/review/forsalebyinventor.com",
+            "https://www.bbb.org/us/pa/canonsburg/profile/product-development-and-marketing/montgomery-ip-associates-lp-0141-53000334",
+            "https://www.consumeraffairs.com/business/for-sale-by-inventor.html",
+            "https://www.yelp.com/biz/for-sale-by-inventor-canonsburg",
+            "https://www.facebook.com/ForSaleByInventor/"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "210"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is For Sale By Inventor a scam?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, For Sale By Inventor is a legitimate business based in Canonsburg, Pennsylvania, with over 15 years of experience and an A+ rating from the BBB. We provide fee-for-service product development and marketing services."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do I see negative posts about you online?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The invention industry has a high failure rate, and some clients with unrealistic expectations may post negative reviews. We address these concerns transparently on our website and in our \"Bathroom Wall Journalism\" article."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Have you ever been sued?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To date, For Sale By Inventor has not been sued over its services. We address false online claims of lawsuits in our Bathroom Wall Journalism article."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you invest in ideas?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, we do not invest in ideas. This is to avoid a conflict of interest. Our fee-for-service model ensures that you, the inventor, retain 100% ownership and control of your idea."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is your money-back promise?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer a money-back promise for our research services. If we can't find a path forward for your idea after the research phase, we will refund your research fee."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How should I evaluate online reviews about invention companies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Look for patterns. Are the reviews specific? Do they mention team members by name? Does the company respond to negative reviews? A lack of any negative reviews can be a red flag. A company with a long history and a mix of real, detailed reviews is often more trustworthy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I do if I read something negative?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Consider the source. Is it an anonymous post on a forum, or a verified review on a platform like the BBB or Trustpilot? Does the company offer a public response? We encourage you to read both the good and the bad, and then decide for yourself."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is your success rate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It's impossible to give a specific success rate, as so much depends on the invention itself, market conditions, and the inventor's own efforts. We can't guarantee success, but we can guarantee a transparent, professional process to give your idea its best shot."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are your fees?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer fixed fees with no obligation, so you know the full cost upfront. Our fees are competitive with patent attorneys and significantly more transparent than most invention promotion companies."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you protect my idea?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We are bound by a Non-Disclosure Agreement (NDA) with every person who contacts us. This protects both you and us. Every person who signs up is given a time-stamped copy of this NDA. Additionally, all FSBI employees are required to sign NDAs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is \"Bathroom Wall Journalism\"?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This is a term we use to describe anonymous, unsubstantiated claims made on the internet. We address this in detail in our blog post of the same name."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you handle bad reviews?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We listen to them. We respond to them. And we learn from them. Many of our best policies, like our money-back promise, came directly from addressing the concerns raised in negative reviews."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why should I trust you?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Because we are transparent. We show you the good, the bad, and the ugly. We have a long track record, an A+ rating from the BBB, and a commitment to the inventor community. We encourage you to do your research, read our reviews, and then make an informed decision."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
