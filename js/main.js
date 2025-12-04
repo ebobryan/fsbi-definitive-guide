@@ -6,6 +6,36 @@
     'use strict';
 
     /* ==========================================================================
+       Theme Toggle (Dark/Light Mode)
+       ========================================================================== */
+    function initThemeToggle() {
+        const toggle = document.querySelector('.theme-toggle');
+        
+        if (!toggle) return;
+
+        // Check for saved preference or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Apply saved theme or default to dark
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-mode');
+        } else if (savedTheme === 'dark') {
+            document.body.classList.remove('light-mode');
+        }
+        // If no saved preference, default is dark (no class needed)
+
+        // Toggle on click
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            // Save preference
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    }
+
+    /* ==========================================================================
        FAQ Accordion
        ========================================================================== */
     function initFAQ() {
@@ -80,13 +110,26 @@
         
         if (!nav) return;
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(10,10,15,0.95)';
+        function updateNavBackground() {
+            const isLight = document.body.classList.contains('light-mode');
+            const scrolled = window.scrollY > 100;
+            
+            if (isLight) {
+                nav.style.background = scrolled 
+                    ? 'rgba(255,255,255,0.98)' 
+                    : 'rgba(255,255,255,0.95)';
             } else {
-                nav.style.background = 'rgba(10,10,15,0.85)';
+                nav.style.background = scrolled 
+                    ? 'rgba(10,10,15,0.95)' 
+                    : 'rgba(10,10,15,0.85)';
             }
-        });
+        }
+
+        window.addEventListener('scroll', updateNavBackground);
+        
+        // Also update when theme changes
+        const observer = new MutationObserver(updateNavBackground);
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     }
 
     /* ==========================================================================
@@ -135,6 +178,7 @@
        Initialize All
        ========================================================================== */
     function init() {
+        initThemeToggle();
         initFAQ();
         initScrollAnimations();
         initSmoothScroll();
