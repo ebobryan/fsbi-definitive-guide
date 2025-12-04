@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Review for FSBI | For Sale By Inventor</title>
+    <meta name="description" content="Your 60-second review helps other inventors choose the right partner and keeps us improving. Leave a review for FSBI on Google, BBB, Trustpilot, and more.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Leave a Review for FSBI",
+        "description": "Your 60-second review helps other inventors choose the right partner and keeps us improving. Leave a review for FSBI on Google, BBB, Trustpilot, and more.",
+        "url": "https://forsalebyinventor.com/reviews/leave-review/",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "For Sale By Inventor",
+            "url": "https://forsalebyinventor.com/",
+            "logo": "https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png",
+            "sameAs": [
+                "https://www.google.com/maps/place/For+Sale+By+Inventor/@40.293746,-80.174841,17z/data=!3m1!4b1!4m6!3m5!1s0x8834541d13b82189:0x310379ff6e4b5897!8m2!3d40.293746!4d-80.174841!16s%2Fg%2F1tdz5gv0",
+                "https://www.trustpilot.com/evaluate/forsalebyinventor.com",
+                "https://www.consumeraffairs.com/review/write/?brand_id=12050",
+                "https://www.bbb.org/us/pa/canonsburg/profile/product-development-and-marketing/montgomery-ip-associates-lp-0141-53000334/customer-reviews",
+                "https://www.yelp.com/writeareview/biz/eTIM0a6k3hjv5I_FFBfGAA",
+                "https://www.facebook.com/ForSaleByInventor/"
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Hero for review hub page */
+        .review-hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+        }
+
+        .review-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(37, 96, 153, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .review-hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-hero h1 em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        .review-hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+        }
+
+        /* Feedback Filter Section */
+        .feedback-filter {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            position: relative;
+        }
+
+        .feedback-filter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .feedback-section {
+            padding: 1.5rem 0;
+        }
+
+        .feedback-section:first-child {
+            padding-top: 0;
+        }
+
+        .feedback-section + .feedback-section {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .feedback-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .feedback-section h3 .icon {
+            font-size: 1.5rem;
+        }
+
+        .feedback-section p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .feedback-section .btn-feedback {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-surface-elevated);
+            color: var(--color-text);
+            padding: 0.875rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+        }
+
+        .feedback-section .btn-feedback:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Review Destinations Grid */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .review-card-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.25rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        /* Platform-specific colors */
+        .review-card.google .review-card-icon {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc05 75%, #ea4335 100%);
+            color: white;
+        }
+
+        .review-card.bbb .review-card-icon {
+            background: linear-gradient(135deg, #005a9c 0%, #003d6b 100%);
+            color: white;
+        }
+
+        .review-card.trustpilot .review-card-icon {
+            background: linear-gradient(135deg, #00b67a 0%, #00a172 100%);
+            color: white;
+        }
+
+        .review-card.consumeraffairs .review-card-icon {
+            background: linear-gradient(135deg, #e01a22 0%, #b8161c 100%);
+            color: white;
+        }
+
+        .review-card.yelp .review-card-icon {
+            background: linear-gradient(135deg, #d32323 0%, #af0606 100%);
+            color: white;
+        }
+
+        .review-card.facebook .review-card-icon {
+            background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
+            color: white;
+        }
+
+        .review-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .review-card p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .review-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Thank You Note */
+        .thank-you-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .thank-you-section h2 {
+            color: white;
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-section p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .review-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .review-hero {
+                padding: 7rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feedback-filter {
+                padding: 2rem;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+        }
+
+        /* Feedback Form Styles */
+        #feedback-form {
+            margin-top: 1.5rem;
+            animation: fadeSlideIn 0.3s ease-out;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(37, 96, 153, 0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--color-text-subtle);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        #feedback-form .btn {
+            margin-top: 0.5rem;
+        }
+
+        #feedback-form .btn svg {
+            flex-shrink: 0;
+        }
+
+        /* Form Messages */
+        .form-message {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius);
+            margin-top: 1.5rem;
+        }
+
+        .form-message svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .form-message strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-message p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .form-message-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--color-success);
+        }
+
+        .form-message-success strong {
+            color: var(--color-success);
+        }
+
+        .form-message-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+        }
+
+        .form-message-error strong {
+            color: #f87171;
+        }
+
+        .form-message-error a {
+            color: #f87171;
+            text-decoration: underline;
+        }
+
+        /* Button loading state */
+        #feedback-submit.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        #feedback-submit.loading::after {
+            content: '...';
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reviews-and-reputation.html">Our Reviews</a></li>
+                <li><a href="book-call.html">Book a Call</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </button>
+            <a href="book-call.html" class="nav-cta">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="review-hero">
+        <div class="review-hero-content fade-up">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                Share Your Experience
+            </div>
+            <h1>Leave a Review for <em>FSBI</em></h1>
+            <p class="review-hero-subtitle">Your 60-second review helps other inventors choose the right partner and keeps us improving.</p>
+        </div>
+    </section>
+
+    <!-- Feedback Filter Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="feedback-filter fade-up">
+                <!-- Positive Experience Path -->
+                <div class="feedback-section">
+                    <h3><span class="icon">⭐</span> Had a great experience?</h3>
+                    <p>We'd love for you to share it publicly. Choose your preferred site below to help other inventors find us.</p>
+                </div>
+
+                <!-- Negative Experience Path -->
+                <div class="feedback-section">
+                    <h3><span class="icon">💬</span> Not a 5-Star Experience?</h3>
+                    <p>Please let us know how we can improve. Your feedback will be sent directly to our leadership team so we can make it right.</p>
+                    
+                    <!-- Toggle Button -->
+                    <button type="button" id="show-feedback-form" class="btn-feedback">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Share Feedback with Our Team
+                    </button>
+                    
+                    <!-- Form (hidden by default) -->
+                    <form id="feedback-form" action="https://formspree.io/f/xqarlqye" method="POST" style="display: none;">
+                        <!-- Honeypot field for spam protection - hidden from users -->
+                        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedback-name">Your Name</label>
+                                <input type="text" id="feedback-name" name="name" required placeholder="John Smith">
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-email">Email Address</label>
+                                <input type="email" id="feedback-email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-message">How Can We Improve?</label>
+                            <textarea id="feedback-message" name="message" required rows="4" placeholder="Please share the details of your experience and how we can make it right..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="feedback-submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                            Send Feedback to Leadership
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (hidden by default) -->
+                    <div id="feedback-success" class="form-message form-message-success" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <div>
+                            <strong>Thank you for your feedback!</strong>
+                            <p>Our leadership team will review your message and reach out if needed.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Message (hidden by default) -->
+                    <div id="feedback-error" class="form-message form-message-error" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        <div>
+                            <strong>Something went wrong</strong>
+                            <p>Please try again or email us directly at <a href="mailto:feedback@forsalebyinventor.com">feedback@forsalebyinventor.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Public Review Destinations -->
+    <section style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+                <span class="section-label">Choose Your Platform</span>
+                <h2 class="section-title">Where Would You Like to Leave Your Review?</h2>
+                <p style="color: var(--color-text-muted);">Select the platform you're most comfortable with. Each review helps other inventors make informed decisions.</p>
+            </div>
+            
+            <div class="review-grid stagger-children">
+                <!-- Google -->
+                <div class="review-card google">
+                    <div class="review-card-icon">G</div>
+                    <h3>Google Reviews</h3>
+                    <p>Most helpful for other inventors finding us when they search.</p>
+                    <a href="https://www.google.com/maps/place/For+Sale+By+Inventor/@40.293746,-80.174841,17z/data=!3m1!4b1!4m6!3m5!1s0x8834541d13b82189:0x310379ff6e4b5897!8m2!3d40.293746!4d-80.174841!16s%2Fg%2F1tdz5gv0?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Leave a Review on Google →
+                    </a>
+                </div>
+
+                <!-- BBB -->
+                <div class="review-card bbb">
+                    <div class="review-card-icon">BBB</div>
+                    <h3>Better Business Bureau</h3>
+                    <p>Helps people compare us to other invention services.</p>
+                    <a href="https://www.bbb.org/us/pa/canonsburg/profile/product-development-and-marketing/montgomery-ip-associates-lp-0141-53000334/customer-reviews" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Leave a Review on BBB →
+                    </a>
+                </div>
+
+                <!-- Trustpilot -->
+                <div class="review-card trustpilot">
+                    <div class="review-card-icon">★</div>
+                    <h3>Trustpilot</h3>
+                    <p>Great for sharing your experience with a global audience.</p>
+                    <a href="https://www.trustpilot.com/evaluate/forsalebyinventor.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Leave a Review on Trustpilot →
+                    </a>
+                </div>
+
+                <!-- ConsumerAffairs -->
+                <div class="review-card consumeraffairs">
+                    <div class="review-card-icon">CA</div>
+                    <h3>ConsumerAffairs</h3>
+                    <p>Helps consumers see how we treat inventors over time.</p>
+                    <a href="https://www.consumeraffairs.com/review/write/?brand_id=12050" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Leave a Review on ConsumerAffairs →
+                    </a>
+                </div>
+
+                <!-- Yelp -->
+                <div class="review-card yelp">
+                    <div class="review-card-icon">Y</div>
+                    <h3>Yelp</h3>
+                    <p>Perfect if you already use Yelp to review businesses.</p>
+                    <a href="https://www.yelp.com/writeareview/biz/eTIM0a6k3hjv5I_FFBfGAA?return_url=%2Fbiz%2FeTIM0a6k3hjv5I_FFBfGAA&review_origin=biz-details-war-button" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Leave a Review on Yelp →
+                    </a>
+                </div>
+
+                <!-- Facebook -->
+                <div class="review-card facebook">
+                    <div class="review-card-icon">f</div>
+                    <h3>Facebook</h3>
+                    <p>Share your experience with your network.</p>
+                    <!-- TODO: Replace with real Facebook review URL -->
+                    <a href="https://www.facebook.com/ForSaleByInventor/reviews" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Leave a Review on Facebook →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="fade-up">
+                <h2>Thank You for Taking the Time!</h2>
+                <p>Your feedback—positive or constructive—is a gift that helps us serve the inventor community better. We read every single review and use it to improve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources -->
+    <section style="background: var(--color-bg);">
+        <div class="container" style="text-align: center;">
+            <div class="fade-up">
+                <span class="section-label">Want to Learn More?</span>
+                <h2 class="section-title">Explore Our Transparency</h2>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2rem;">See how we handle all reviews—the good, the bad, and the ugly—on our Reviews & Reputation page.</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="reviews-and-reputation.html" class="btn btn-primary">Read Our Reviews Hub →</a>
+                    <a href="book-call.html" class="btn btn-secondary">Book a Strategy Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo"><img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor"></div>
+                <p class="footer-desc">The Un-Invention Company™ — Transparent, honest, and dedicated to the inventor's success for over 15 years.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Review Platforms</h4>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/place/For+Sale+By+Inventor/" target="_blank">Google Reviews</a></li>
+                        <li><a href="https://www.trustpilot.com/review/forsalebyinventor.com" target="_blank">Trustpilot</a></li>
+                        <li><a href="https://www.bbb.org/us/pa/canonsburg/profile/product-development-and-marketing/montgomery-ip-associates-lp-0141-53000334" target="_blank">Better Business Bureau</a></li>
+                        <li><a href="https://www.yelp.com/biz/for-sale-by-inventor-canonsburg" target="_blank">Yelp</a></li>
+                        <li><a href="https://www.consumeraffairs.com/business/for-sale-by-inventor.html" target="_blank">Consumer Affairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://launch.forsalebyinventor.com/inventor-kit/">Inventor Kit</a></li>
+                        <li><a href="https://forsalebyinventor.com/invention-validation-calculator/">GOAT Calculator</a></li>
+                        <li><a href="https://forsalebyinventor.com/">Main Website</a></li>
+                        <li><a href="index.html">Definitive Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="reviews-and-reputation.html">Reviews & Reputation</a></li>
+                        <li><a href="https://forsalebyinventor.com/client-success-stories/">Success Stories</a></li>
+                        <li><a href="https://forsalebyinventor.com/contact/">Contact</a></li>
+                        <li><a href="book-call.html">Book a Call</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 For Sale By Inventor: The Un-Invention Company™. All rights reserved.</p>
+            <p style="font-size: 0.8rem; max-width: 500px;">A+ Rated by the Better Business Bureau. Canonsburg, Pennsylvania.</p>
+            <div class="footer-legal">
+                <a href="https://forsalebyinventor.com/privacy-policy/">Privacy Policy</a>
+                <a href="https://forsalebyinventor.com/terms-and-conditions/">Terms of Service</a>
+                <a href="https://forsalebyinventor.com/contact/">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    
+    <!-- Feedback Form Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showFormBtn = document.getElementById('show-feedback-form');
+            const form = document.getElementById('feedback-form');
+            const submitBtn = document.getElementById('feedback-submit');
+            const successMsg = document.getElementById('feedback-success');
+            const errorMsg = document.getElementById('feedback-error');
+
+            // Show form when button is clicked
+            if (showFormBtn && form) {
+                showFormBtn.addEventListener('click', function() {
+                    showFormBtn.style.display = 'none';
+                    form.style.display = 'block';
+                    // Focus on the first input
+                    document.getElementById('feedback-name').focus();
+                });
+            }
+
+            // Handle form submission
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Reset messages
+                    successMsg.style.display = 'none';
+                    errorMsg.style.display = 'none';
+                    
+                    // Add loading state
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            // Success
+                            form.style.display = 'none';
+                            successMsg.style.display = 'flex';
+                            form.reset();
+                        } else {
+                            // Error from Formspree
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        // Network or other error
+                        errorMsg.style.display = 'flex';
+                        console.error('Form error:', error);
+                    } finally {
+                        // Remove loading state
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
