@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     
     <!-- Shared Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://forsalebyinventor.com/wp-content/themes/hello-elementor-child/claude-styles.css">
     
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -440,6 +440,25 @@
         #feedback-submit.loading::after {
             content: '...';
         }
+
+        /* Leadership Feedback Section */
+        .leadership-feedback-section {
+            padding: 4rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .leadership-feedback-section .feedback-filter {
+            margin-bottom: 0;
+        }
+
+        .leadership-feedback-section .feedback-filter::before {
+            background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+        }
+
+        .feedback-form-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -472,76 +491,6 @@
             </div>
             <h1>Leave a Review for <em>FSBI</em></h1>
             <p class="review-hero-subtitle">Your 60-second review helps other inventors choose the right partner and keeps us improving.</p>
-        </div>
-    </section>
-
-    <!-- Feedback Filter Section -->
-    <section style="background: var(--color-bg);">
-        <div class="container">
-            <div class="feedback-filter fade-up">
-                <!-- Positive Experience Path -->
-                <div class="feedback-section">
-                    <h3><span class="icon">⭐</span> Had a great experience?</h3>
-                    <p>We'd love for you to share it publicly. Choose your preferred site below to help other inventors find us.</p>
-                </div>
-
-                <!-- Negative Experience Path -->
-                <div class="feedback-section">
-                    <h3><span class="icon">💬</span> Not a 5-Star Experience?</h3>
-                    <p>Please let us know how we can improve. Your feedback will be sent directly to our leadership team so we can make it right.</p>
-                    
-                    <!-- Toggle Button -->
-                    <button type="button" id="show-feedback-form" class="btn-feedback">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Share Feedback with Our Team
-                    </button>
-                    
-                    <!-- Form (hidden by default) -->
-                    <form id="feedback-form" action="https://formspree.io/f/xqarlqye" method="POST" style="display: none;">
-                        <!-- Honeypot field for spam protection - hidden from users -->
-                        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="feedback-name">Your Name</label>
-                                <input type="text" id="feedback-name" name="name" required placeholder="John Smith">
-                            </div>
-                            <div class="form-group">
-                                <label for="feedback-email">Email Address</label>
-                                <input type="email" id="feedback-email" name="email" required placeholder="john@example.com">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="feedback-message">How Can We Improve?</label>
-                            <textarea id="feedback-message" name="message" required rows="4" placeholder="Please share the details of your experience and how we can make it right..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" id="feedback-submit">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                            Send Feedback to Leadership
-                        </button>
-                    </form>
-                    
-                    <!-- Success Message (hidden by default) -->
-                    <div id="feedback-success" class="form-message form-message-success" style="display: none;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        <div>
-                            <strong>Thank you for your feedback!</strong>
-                            <p>Our leadership team will review your message and reach out if needed.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Error Message (hidden by default) -->
-                    <div id="feedback-error" class="form-message form-message-error" style="display: none;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                        <div>
-                            <strong>Something went wrong</strong>
-                            <p>Please try again or email us directly at <a href="mailto:feedback@forsalebyinventor.com">feedback@forsalebyinventor.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -629,6 +578,31 @@
         </div>
     </section>
 
+    <!-- Feedback Filter Section -->
+    <section style="background: var(--color-bg);">
+        <div class="container">
+            <div class="feedback-filter fade-up">
+                <!-- Positive Experience Path -->
+                <div class="feedback-section">
+                    <h3><span class="icon">⭐</span> Had a great experience?</h3>
+                    <p>We'd love for you to share it publicly. Choose your preferred site above to help other inventors find us.</p>
+                </div>
+
+                <!-- Negative Experience Path -->
+                <div class="feedback-section">
+                    <h3><span class="icon">💬</span> Not a 5-Star Experience?</h3>
+                    <p>Please let us know how we can improve. Your feedback will be sent directly to our leadership team so we can make it right.</p>
+                    
+                    <!-- Link to Form at Bottom -->
+                    <a href="#leadership-feedback" class="btn-feedback">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Send Feedback to Leadership
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Additional Resources -->
     <section style="background: var(--color-bg);">
         <div class="container" style="text-align: center;">
@@ -639,6 +613,65 @@
                 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                     <a href="reviews-and-reputation.html" class="btn btn-primary">Read Our Reviews Hub →</a>
                     <a href="book-call.html" class="btn btn-secondary">Book a Strategy Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Feedback Form Section (hidden until anchor link clicked) -->
+    <section id="leadership-feedback" class="leadership-feedback-section" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="feedback-form-wrapper fade-up">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <span class="section-label">Private Feedback</span>
+                    <h2 class="section-title">Send Feedback to Leadership</h2>
+                    <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">Your feedback will be sent directly to our leadership team so we can address your concerns and improve our service.</p>
+                </div>
+                
+                <div class="feedback-filter">
+                    <form id="feedback-form" action="https://formspree.io/f/xqarlqye" method="POST">
+                        <!-- Honeypot field for spam protection - hidden from users -->
+                        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedback-name">Your Name</label>
+                                <input type="text" id="feedback-name" name="name" required placeholder="John Smith">
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-email">Email Address</label>
+                                <input type="email" id="feedback-email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-message">How Can We Improve?</label>
+                            <textarea id="feedback-message" name="message" required rows="4" placeholder="Please share the details of your experience and how we can make it right..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="feedback-submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                            Send Feedback to Leadership
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (hidden by default) -->
+                    <div id="feedback-success" class="form-message form-message-success" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <div>
+                            <strong>Thank you for your feedback!</strong>
+                            <p>Our leadership team will review your message and reach out if needed.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Message (hidden by default) -->
+                    <div id="feedback-error" class="form-message form-message-error" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        <div>
+                            <strong>Something went wrong</strong>
+                            <p>Please try again or email us directly at <a href="mailto:feedback@forsalebyinventor.com">feedback@forsalebyinventor.com</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -699,21 +732,23 @@
     <!-- Feedback Form Handler -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const showFormBtn = document.getElementById('show-feedback-form');
             const form = document.getElementById('feedback-form');
             const submitBtn = document.getElementById('feedback-submit');
             const successMsg = document.getElementById('feedback-success');
             const errorMsg = document.getElementById('feedback-error');
+            const feedbackSection = document.getElementById('leadership-feedback');
 
-            // Show form when button is clicked
-            if (showFormBtn && form) {
-                showFormBtn.addEventListener('click', function() {
-                    showFormBtn.style.display = 'none';
-                    form.style.display = 'block';
-                    // Focus on the first input
-                    document.getElementById('feedback-name').focus();
+            // Smooth scroll to feedback form when clicking the anchor link
+            document.querySelectorAll('a[href="#leadership-feedback"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    feedbackSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Focus on the first input after scroll
+                    setTimeout(() => {
+                        document.getElementById('feedback-name').focus();
+                    }, 500);
                 });
-            }
+            });
 
             // Handle form submission
             if (form) {
