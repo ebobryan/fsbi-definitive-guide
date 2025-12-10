@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Definitive Guide for the Everyday Inventor | For Sale By Inventor</title>
+    
+    <!-- Print-optimized fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           Print-Optimized Styles
+           ========================================================================== */
+        
+        :root {
+            --color-primary: #256099;
+            --color-accent: #EB6A24;
+            --color-text: #222222;
+            --color-text-muted: #555555;
+            --color-border: #dddddd;
+            --color-bg-alt: #f5f5f5;
+            --font-display: 'Montserrat', Georgia, serif;
+            --font-body: 'Inter', Arial, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            font-size: 11pt;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            line-height: 1.6;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        /* Page breaks */
+        .page-break {
+            page-break-after: always;
+            break-after: page;
+        }
+        
+        .no-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        /* ==========================================================================
+           Cover Page
+           ========================================================================== */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 9in;
+            text-align: center;
+            padding: 1in 0;
+        }
+        
+        .cover-logo {
+            width: 250px;
+            margin-bottom: 2rem;
+        }
+        
+        .cover h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+        
+        .cover h1 em {
+            font-style: italic;
+            color: var(--color-primary);
+        }
+        
+        .cover-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        
+        .cover-badge {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+        
+        .cover-footer {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        
+        .cover-url {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        /* ==========================================================================
+           Table of Contents
+           ========================================================================== */
+        .toc {
+            padding: 1in 0;
+        }
+        
+        .toc h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px dotted var(--color-border);
+        }
+        
+        .toc-list li span:first-child {
+            font-weight: 500;
+        }
+        
+        .toc-list li span:last-child {
+            color: var(--color-text-muted);
+        }
+        
+        /* ==========================================================================
+           Content Sections
+           ========================================================================== */
+        .section {
+            padding: 1.5rem 0;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--color-text);
+        }
+        
+        h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: var(--color-primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--color-text-muted);
+        }
+        
+        strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        
+        /* Blockquote */
+        blockquote {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--color-text-muted);
+        }
+        
+        blockquote cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        /* Card/Box */
+        .box {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+        
+        .box-warning {
+            border-left: 4px solid var(--color-accent);
+            background: #fff8f0;
+        }
+        
+        .box-primary {
+            border-left: 4px solid var(--color-primary);
+            background: #f0f5fa;
+        }
+        
+        .box h4 {
+            margin-top: 0;
+        }
+        
+        /* Formula grid */
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .formula-item {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 0.75rem 0.25rem;
+        }
+        
+        .formula-letter {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .formula-word {
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        /* VIP Cards */
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .vip-card {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .vip-number {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .vip-card h4 {
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .vip-card p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .stat {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        th {
+            background: var(--color-bg-alt);
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        td {
+            color: var(--color-text-muted);
+        }
+        
+        .price-value {
+            text-align: right;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        /* Resources grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .resource-item {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .resource-item h4 {
+            margin: 0 0 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .resource-item p {
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        
+        /* Paths grid */
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .path-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        
+        .path-card.featured {
+            border: 2px solid var(--color-primary);
+            background: #f0f5fa;
+        }
+        
+        .path-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+        
+        .path-subtitle {
+            font-size: 0.8rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .path-price {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .path-price span {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+        
+        .path-card p {
+            font-size: 0.8rem;
+            text-align: left;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.75rem 0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        
+        /* Commitments */
+        .commitments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .commitment-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .commitment-check {
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .commitment-item h4 {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .commitment-item p {
+            font-size: 0.85rem;
+            margin: 0.25rem 0 0;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: var(--color-primary);
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .cta-box h3 {
+            color: white;
+            margin: 0 0 0.5rem;
+        }
+        
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin: 0 0 1rem;
+        }
+        
+        .cta-box .url {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .print-footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+        
+        .print-footer strong {
+            color: var(--color-primary);
+        }
+        
+        /* Print-specific */
+        @media print {
+            body {
+                padding: 0;
+                max-width: none;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            .cover {
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover">
+        <img src="https://forsalebyinventor.com/wp-content/uploads/2022/12/LOGO-Transparent.png" alt="For Sale By Inventor" class="cover-logo">
+        <div class="cover-badge">The Un-Invention Company™ — 3,000+ Patents Issued</div>
+        <h1>The Definitive Guide for the <em>Everyday Inventor</em></h1>
+        <p class="cover-subtitle">From Idea to Market: How to Patent, Protect, and Sell Your Invention Without Getting Ripped Off</p>
+        <div class="cover-footer">
+            <p class="cover-url">forsalebyinventor.com</p>
+            <p>© For Sale By Inventor. All Rights Reserved.</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul class="toc-list">
+            <li><span>Part 1: The Broken Invention Industry</span> <span>3</span></li>
+            <li><span>Part 2: Our Story — How Neil Almost Lost His Invention</span> <span>4</span></li>
+            <li><span>Part 3: The B.INSPIRED Magic Formula</span> <span>5</span></li>
+            <li><span>Part 4: The VIP Method™</span> <span>6</span></li>
+            <li><span>Part 5: The SPARK Report</span> <span>7</span></li>
+            <li><span>Part 6: Virtual Tradeshow — 24/7/365 Exposure</span> <span>8</span></li>
+            <li><span>Part 7: FREE Resources</span> <span>9</span></li>
+            <li><span>Part 8: The Complete Value Stack</span> <span>10</span></li>
+            <li><span>Part 9: Choose Your Path</span> <span>11</span></li>
+            <li><span>Part 10: Common Concerns Addressed</span> <span>12</span></li>
+            <li><span>Part 11: Frequently Asked Questions</span> <span>13</span></li>
+            <li><span>Part 12: Our Ethical Commitments</span> <span>14</span></li>
+            <li><span>Next Steps</span> <span>15</span></li>
+        </ul>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Vision -->
+    <div class="section">
+        <span class="section-label">Imagine</span>
+        <h2 class="section-title">Your Invention on the Shelf</h2>
+        
+        <p>It's five years from now. You're standing in the aisle of a major retailer—Target, Walmart, Home Depot—and there it is: <strong>your invention</strong>. Your name on the package. Your idea, brought to life.</p>
+        
+        <p>You pull out your phone and take a picture. You send it to your family. Your spouse tears up. Your kids are proud. <em>You did it.</em></p>
+        
+        <p>This isn't a fantasy. This is the reality for thousands of everyday inventors who took action.</p>
+        
+        <div class="box box-warning">
+            <h4>⚠️ But imagine the opposite...</h4>
+            <p>Five years from now, you're scrolling through Amazon and you see it: <strong>your idea</strong>. But it's not your product. It's someone else's.</p>
+            <p>They filed the patent. They brought it to market. They're making the money.</p>
+            <p><em>And you're left wondering, "What if I had just started?"</em></p>
+            <p style="margin-top: 1rem; margin-bottom: 0;"><strong>Which future do you want?</strong> The difference isn't luck. It's not talent. It's not money. It's <strong>taking the first step</strong>—and taking it the right way.</p>
+        </div>
+    </div>
+    
+    <!-- Part 1: Broken Industry -->
+    <div class="section">
+        <span class="section-label">Part 1</span>
+        <h2 class="section-title">The Broken Invention Industry</h2>
+        <p>For decades, inventors have been trapped between two terrible choices:</p>
+        
+        <div class="two-col">
+            <div class="box">
+                <h4>The Expensive Patent Attorney</h4>
+                <p>$450 per hour median rate. By the time your patent is issued, you've spent <strong>$20,000 to $100,000</strong>.</p>
+                <p style="margin-bottom: 0;">But here's the problem: you now have a patent and <em>no idea what to do with it</em>. Patent attorneys are experts in patent law—not marketing, manufacturing, or licensing.</p>
+            </div>
+            <div class="box">
+                <h4>The Risky Invention Marketing Company</h4>
+                <p>Late-night TV ads promising to turn your idea into a million-dollar product. They charge <strong>$5,000 to $10,000+</strong> upfront.</p>
+                <p style="margin-bottom: 0;">The FTC's "Project Mousetrap" exposed widespread deception in the invention promotion industry. High upfront fees, outsourced work, and business models built on selling you more services.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 2: Neil's Story -->
+    <div class="section">
+        <span class="section-label">Part 2</span>
+        <h2 class="section-title">How Neil Almost Lost His Invention</h2>
+        
+        <blockquote>
+            "I almost lost out on my first invention. Imagine this: you've worked tirelessly on your invention. Tons of sleepless nights. Years of your life. All your life's savings. Only to release it and find out someone else developed the exact same idea. We launched the same product at the same tradeshow. Luckily, I beat the competition by filing just one week earlier."
+            <cite>— Neil Montgomery, CEO & Founder, For Sale By Inventor</cite>
+        </blockquote>
+        
+        <p>That near-disaster taught Neil everything about the broken invention industry.</p>
+        
+        <p>Neil created <strong>For Sale By Inventor</strong> to be different. We are not another invention company—we are <strong>The Un-Invention Company™</strong>. Transparent, affordable, and focused on your success.</p>
+        
+        <div class="box box-primary">
+            <h4>📺 Watch Neil's Full Story</h4>
+            <p style="margin-bottom: 0;">Visit <strong>forsalebyinventor.com/guides</strong> to watch the video of Neil's journey and how it led to the creation of The Un-Invention Company.</p>
+        </div>
+    </div>
+    
+    <!-- Part 3: B.INSPIRED -->
+    <div class="section">
+        <span class="section-label">Part 3</span>
+        <h2 class="section-title">The B.INSPIRED Magic Formula</h2>
+        <p>The framework that has helped <strong>3,000+ patents</strong> get issued:</p>
+        
+        <div class="formula-grid">
+            <div class="formula-item">
+                <div class="formula-letter">B</div>
+                <div class="formula-word">Brainstorm</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">I</div>
+                <div class="formula-word">Ideas</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">N</div>
+                <div class="formula-word">Novel</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">S</div>
+                <div class="formula-word">Stimulate</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">P</div>
+                <div class="formula-word">Polish</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">I</div>
+                <div class="formula-word">Iterate</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">R</div>
+                <div class="formula-word">Refine</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">E</div>
+                <div class="formula-word">Excite</div>
+            </div>
+            <div class="formula-item">
+                <div class="formula-letter">D</div>
+                <div class="formula-word">Develop</div>
+            </div>
+        </div>
+        
+        <p>Download the complete B.INSPIRED Magic Formula with detailed explanations in our FREE Inventor Kit at <strong>forsalebyinventor.com/inventor-kit</strong></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 4: VIP Method -->
+    <div class="section">
+        <span class="section-label">Part 4</span>
+        <h2 class="section-title">The VIP Method™</h2>
+        <p><strong>V</strong>ision + <strong>I</strong>mplementation = <strong>P</strong>erformance</p>
+        <p>It's not about the patent—it's about building a successful product. Six essential elements for inventor success:</p>
+        
+        <div class="vip-grid">
+            <div class="vip-card no-break">
+                <span class="vip-number">01</span>
+                <h4>Belief</h4>
+                <p>You must believe you're capable and deserving. Truly envision yourself realizing your full potential.</p>
+            </div>
+            <div class="vip-card no-break">
+                <span class="vip-number">02</span>
+                <h4>Intentional Implementation</h4>
+                <p>Success isn't solely about hard work. It's practicing effectively for 1,000 hours vs. 10,000 hours.</p>
+            </div>
+            <div class="vip-card no-break">
+                <span class="vip-number">03</span>
+                <h4>Remove Resistance</h4>
+                <p>Internal resistance (limiting beliefs) and external resistance (lack of resources) must be eliminated.</p>
+            </div>
+            <div class="vip-card no-break">
+                <span class="vip-number">04</span>
+                <h4>Focus</h4>
+                <p>Where focus goes, energy flows. You can't be Tiger Woods AND Michael Jordan. Focus on ONE thing.</p>
+            </div>
+            <div class="vip-card no-break">
+                <span class="vip-number">05</span>
+                <h4>Sacrifice</h4>
+                <p>Put your energy, time, and money into what you want to achieve. Be intentional.</p>
+            </div>
+            <div class="vip-card no-break">
+                <span class="vip-number">06</span>
+                <h4>Time</h4>
+                <p>VIP Success Strategy × Time = Results. There's no overnight success, but results are inevitable.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Our Mission Stats -->
+    <div class="section">
+        <h3 style="text-align: center; font-size: 1.25rem;">Our Mission</h3>
+        <p style="text-align: center;">Help everyday inventors launch with <strong>Maximum Protection</strong>, <strong>Maximum Exposure</strong>, and <strong>Minimum Expense</strong>.</p>
+        
+        <div class="stats-row">
+            <div class="stat no-break">
+                <div class="stat-number">3,000+</div>
+                <div class="stat-label">Patents Issued</div>
+            </div>
+            <div class="stat no-break">
+                <div class="stat-number">8,500+</div>
+                <div class="stat-label">Companies in Database</div>
+            </div>
+            <div class="stat no-break">
+                <div class="stat-number">2,400+</div>
+                <div class="stat-label">GOAT Calculator Users</div>
+            </div>
+            <div class="stat no-break">
+                <div class="stat-number">A+</div>
+                <div class="stat-label">BBB Rating</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 5: SPARK Report -->
+    <div class="section">
+        <span class="section-label">Part 5</span>
+        <h2 class="section-title">The SPARK Report</h2>
+        
+        <p>Before you invest thousands in patenting, you need to know three critical things:</p>
+        <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+            <li style="margin-bottom: 0.5rem;"><strong>Is your idea patentable?</strong> (Has someone already patented it?)</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Is your idea technically feasible?</strong> (Can it actually be built?)</li>
+            <li><strong>Is there a market for it?</strong> (Will anyone buy it?)</li>
+        </ol>
+        
+        <p>Patent attorneys charge <strong>$3,000+</strong> just for a patent search. Our SPARK Report gives you everything in one comprehensive package.</p>
+        
+        <p style="margin-bottom: 0.5rem;"><strong>S</strong> — Sales & Marketing &nbsp;|&nbsp; <strong>P</strong> — Protection &nbsp;|&nbsp; <strong>A</strong> — Achievability &nbsp;|&nbsp; <strong>R</strong> — Research &nbsp;|&nbsp; <strong>K</strong> — Knowledge Report</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th class="price-value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Patent Search & Patentability Assessment</td><td class="price-value">$3,000</td></tr>
+                <tr><td>Technical Review</td><td class="price-value">$300</td></tr>
+                <tr><td>Statement of Feasibility</td><td class="price-value">$500</td></tr>
+                <tr><td>Technical Language Description</td><td class="price-value">$200</td></tr>
+                <tr><td>Marketplace & Competitive Overview</td><td class="price-value">$500</td></tr>
+                <tr><td>Graphic Artist's Rendering</td><td class="price-value">$500</td></tr>
+                <tr><td>Personalized Invention Coach</td><td class="price-value">$500</td></tr>
+                <tr style="background: var(--color-bg-alt);"><td><strong>TOTAL VALUE</strong></td><td class="price-value"><strong style="color: var(--color-primary); font-size: 1.1rem;">$5,000</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 6: Virtual Tradeshow -->
+    <div class="section">
+        <span class="section-label">Part 6</span>
+        <h2 class="section-title">Virtual Tradeshow: 24/7/365 Exposure</h2>
+        <p>Traditional tradeshows cost $10,000+ and last a weekend. Our virtual approach saves you <strong>$15,000+</strong>.</p>
+        
+        <div class="two-col" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="box no-break" style="text-align: center;">
+                <h4>24/7/365 Exposure</h4>
+                <p>Your invention showcased to <strong>8,500+ companies</strong> around the clock. No booth fees, no travel costs.</p>
+            </div>
+            <div class="box no-break" style="text-align: center;">
+                <h4>Virtual Models</h4>
+                <p>Instead of $5,000+ physical prototypes, we create virtual models shareable with unlimited manufacturers.</p>
+            </div>
+            <div class="box no-break" style="text-align: center;">
+                <h4>Professional Videos</h4>
+                <p>YouTube videos that showcase your invention professionally to investors, retailers, and licensees.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Part 7: Free Resources -->
+    <div class="section">
+        <span class="section-label">Part 7</span>
+        <h2 class="section-title">FREE Resources — No Credit Card Required</h2>
+        <p>We give away more for FREE than others charge for. That's why we're The Un-Invention Company™.</p>
+        
+        <div class="resources-grid">
+            <div class="resource-item no-break">
+                <h4>FREE Inventor Kit</h4>
+                <p>Patent Search App, Magic Formula, Roadmap & more</p>
+            </div>
+            <div class="resource-item no-break">
+                <h4>FREE Inventor Quiz</h4>
+                <p>Find your perfect starting point</p>
+            </div>
+            <div class="resource-item no-break">
+                <h4>FREE GOAT Calculator</h4>
+                <p>Assess market viability before spending a dime</p>
+            </div>
+            <div class="resource-item no-break">
+                <h4>FREE Record of Invention</h4>
+                <p>Time-stamped documentation of your idea</p>
+            </div>
+            <div class="resource-item no-break">
+                <h4>FREE Idea Review</h4>
+                <p>Expert feedback, no sales pitch</p>
+            </div>
+            <div class="resource-item no-break">
+                <h4>FREE Cost Calculator</h4>
+                <p>Estimate your patent costs</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center;"><strong>Access all free resources at forsalebyinventor.com/inventor-resources</strong></p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 8: Value Stack -->
+    <div class="section">
+        <span class="section-label">Part 8</span>
+        <h2 class="section-title">The Complete Value Stack</h2>
+        <p>Everything you get with The Un-Invention Company™ full-service concierge path:</p>
+        
+        <table>
+            <tbody>
+                <tr><td>Patent Search & Strategy</td><td class="price-value">$1,500 ✓</td></tr>
+                <tr><td>Patent Filing & Prosecution</td><td class="price-value">$15,000 ✓</td></tr>
+                <tr><td>SPARK Report (Complete Package)</td><td class="price-value">$5,000 ✓</td></tr>
+                <tr><td>Virtual Model + YouTube Video</td><td class="price-value">$5,000 ✓</td></tr>
+                <tr><td>Virtual Tradeshow (24/7/365)</td><td class="price-value">$10,000 ✓</td></tr>
+                <tr><td>Manufacturer Sourcing</td><td class="price-value">$2,000 ✓</td></tr>
+                <tr><td>Marketing & Pitch Materials</td><td class="price-value">$5,000 ✓</td></tr>
+                <tr><td>Dedicated Product Manager</td><td class="price-value">$10,000 ✓</td></tr>
+                <tr><td>Access to 8,500+ Companies</td><td class="price-value" style="color: var(--color-primary);">Priceless ✓</td></tr>
+                <tr><td>Money Back Promise</td><td class="price-value" style="color: var(--color-primary);">Peace of Mind ✓</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="box box-primary" style="text-align: center;">
+            <p style="margin-bottom: 0.5rem;"><strong>Over 21x the Value</strong></p>
+            <p style="margin-bottom: 0;"><span style="text-decoration: line-through; color: var(--color-text-muted);">$53,500+</span> &nbsp; <strong style="font-size: 1.25rem; color: var(--color-primary);">Starting at $2,499</strong></p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 9: Choose Your Path -->
+    <div class="section">
+        <span class="section-label">Part 9</span>
+        <h2 class="section-title">Choose Your Path</h2>
+        <p>Three paths, one goal: turning your idea into a successful product.</p>
+        
+        <div class="paths-grid">
+            <div class="path-card featured no-break">
+                <div class="path-title">Full-Service Concierge</div>
+                <div class="path-subtitle">For Sale By Inventor</div>
+                <div class="path-price">$2,499 <span>starting</span></div>
+                <p>Expert guidance, proven system. Everything in the value stack—patent filing, SPARK Report, virtual model, tradeshow, manufacturer sourcing, and dedicated product manager.</p>
+            </div>
+            <div class="path-card no-break">
+                <div class="path-title">Hands-On DIY</div>
+                <div class="path-subtitle">Patents4Less</div>
+                <div class="path-price">$999 <span>starting</span></div>
+                <p>Budget-conscious option. Spark & Ignite packages with expert guidance, templates, and support—but you do more of the legwork.</p>
+            </div>
+            <div class="path-card no-break">
+                <div class="path-title">Just Kicking the Tires</div>
+                <div class="path-subtitle">Launch Kit</div>
+                <div class="path-price">Free <span>to start</span></div>
+                <p>Not ready to commit? Get cheat sheets, journals, certificates, and access to all our free resources to learn more.</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center;">Not sure which path is right for you? Take the Inventor Quiz at <strong>forsalebyinventor.com/quiz</strong></p>
+    </div>
+    
+    <!-- Part 10: Common Concerns -->
+    <div class="section">
+        <span class="section-label">Part 10</span>
+        <h2 class="section-title">Common Concerns Addressed</h2>
+        
+        <div class="two-col">
+            <div class="box no-break">
+                <h4 style="color: var(--color-accent);">"I can't afford it."</h4>
+                <p style="margin-bottom: 0;">Our packages start at <strong>$2,499</strong>—a fraction of the $20,000-$100,000 you'd spend with an attorney. We offer <strong>payment plans</strong> and <strong>fast-pay discounts</strong>. Patents4Less starts at just $999.</p>
+            </div>
+            <div class="box no-break">
+                <h4 style="color: var(--color-accent);">"I don't know if my idea is good enough."</h4>
+                <p style="margin-bottom: 0;">That's why we start with <strong>FREE validation tools</strong>. Take the Inventor Quiz, use the GOAT Calculator, and get a FREE Idea Review—no sales pitch, no obligation.</p>
+            </div>
+            <div class="box no-break">
+                <h4 style="color: var(--color-accent);">"What if they steal my idea?"</h4>
+                <p style="margin-bottom: 0;">We never take a percentage of your invention. You keep <strong>100% of your IP rights</strong>, always. Download our FREE Record of Invention to document your idea securely.</p>
+            </div>
+            <div class="box no-break">
+                <h4 style="color: var(--color-accent);">"I've heard horror stories."</h4>
+                <p style="margin-bottom: 0;">We have too. That's why we're <strong>The Un-Invention Company™</strong>. We have <strong>no FTC complaints</strong>, an <strong>A+ BBB Rating</strong>, and <strong>3,000+ issued patents</strong>.</p>
+            </div>
+        </div>
+        
+        <div class="box box-warning">
+            <h4>⚡ First-to-File System</h4>
+            <p style="margin-bottom: 0;">Since 2013, the first person to file a patent application wins—even if you invented it first. Every day you wait is a day someone else could file.</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 11: FAQ -->
+    <div class="section">
+        <span class="section-label">Part 11</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div class="faq-item no-break">
+            <div class="faq-question">How much does it cost to patent an invention?</div>
+            <div class="faq-answer">Patent attorneys charge $20,000-$100,000. For Sale By Inventor starts at $2,499 (full-service) or $999 (DIY with Patents4Less).</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">How long does it take to get a patent?</div>
+            <div class="faq-answer">Typically 18-36 months from filing to issuance, depending on the complexity and USPTO backlog.</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">Do I need a prototype before filing a patent?</div>
+            <div class="faq-answer">No. You can file a patent application with just drawings and a detailed description. We offer virtual models instead of expensive physical prototypes.</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">What's the difference between provisional and non-provisional patent?</div>
+            <div class="faq-answer">A provisional patent is a lower-cost, temporary filing that gives you "patent pending" status for 12 months. A non-provisional patent is the full application that leads to an issued patent.</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">Can I patent an idea?</div>
+            <div class="faq-answer">No. You can only patent an invention—a specific, tangible implementation of an idea. The idea must be novel, non-obvious, and useful.</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">What's the success rate for inventors?</div>
+            <div class="faq-answer">Most sources cite a 3-5% success rate for inventors who go it alone. Our VIP Method™ has helped issue 3,000+ patents—a significantly higher success rate.</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">Is For Sale By Inventor a law firm?</div>
+            <div class="faq-answer">No. We are not a law firm and do not provide legal advice. All legal services are provided by independent, licensed patent attorneys who have been thoroughly vetted for cost and quality.</div>
+        </div>
+        <div class="faq-item no-break">
+            <div class="faq-question">Are there any FTC complaints against For Sale By Inventor?</div>
+            <div class="faq-answer">No. We have no FTC complaints and an A+ BBB Rating. We are proud of our track record and transparency.</div>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Part 12: Ethical Commitments -->
+    <div class="section">
+        <span class="section-label">Part 12</span>
+        <h2 class="section-title">Our Ethical Commitments</h2>
+        
+        <div class="commitments-grid">
+            <div class="commitment-item no-break">
+                <span class="commitment-check">✓</span>
+                <div>
+                    <h4>100% IP Rights</h4>
+                    <p>You keep 100% ownership of your invention. Always.</p>
+                </div>
+            </div>
+            <div class="commitment-item no-break">
+                <span class="commitment-check">✓</span>
+                <div>
+                    <h4>No Co-Mingling of Funds</h4>
+                    <p>Your money is never co-mingled with funds from independent practitioners.</p>
+                </div>
+            </div>
+            <div class="commitment-item no-break">
+                <span class="commitment-check">✓</span>
+                <div>
+                    <h4>Separate Engagement Agreements</h4>
+                    <p>Clear agreements with us and with any independent law firm.</p>
+                </div>
+            </div>
+            <div class="commitment-item no-break">
+                <span class="commitment-check">✓</span>
+                <div>
+                    <h4>Thoroughly Vetted Practitioners</h4>
+                    <p>We vet all independent patent practitioners for cost and quality.</p>
+                </div>
+            </div>
+            <div class="commitment-item no-break">
+                <span class="commitment-check">✓</span>
+                <div>
+                    <h4>Accurate & Complete Information</h4>
+                    <p>We provide honest guidance, not hype.</p>
+                </div>
+            </div>
+            <div class="commitment-item no-break">
+                <span class="commitment-check">✓</span>
+                <div>
+                    <h4>Money Back Promise</h4>
+                    <p>If the search shows you shouldn't proceed, we refund your research fees.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Next Steps CTA -->
+    <div class="cta-box">
+        <h3>Ready to Take the Next Step?</h3>
+        <p>Book your FREE Strategy Call today. No obligation, no sales pitch—just honest guidance for your invention journey.</p>
+        <div class="url">forsalebyinventor.com/book-call</div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="print-footer">
+        <p><strong>For Sale By Inventor</strong> — The Un-Invention Company™</p>
+        <p>forsalebyinventor.com &nbsp;|&nbsp; (888) 000-0000</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem;">© For Sale By Inventor. All Rights Reserved. This guide is for informational purposes only and does not constitute legal advice.</p>
+    </div>
+
+</body>
+</html>
