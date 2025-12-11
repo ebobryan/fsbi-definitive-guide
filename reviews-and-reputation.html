@@ -625,6 +625,17 @@
             .comparison-table {
                 min-width: 600px;
             }
+            
+            /* Bathroom Wall section responsive */
+            .bathroom-wall-section [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .bathroom-wall-section [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -1092,6 +1103,92 @@
                 <h2 class="section-title">How We Use Your Feedback & Reviews</h2>
                 <p style="color: var(--color-text-muted); margin-bottom: 2rem; line-height: 1.9;">We take every review seriously. Much of our service offering today is a direct result of client feedback. From our money-back promise for research to our fixed-fee structure, we are constantly evolving to better serve the inventor community.</p>
                 <p style="color: var(--color-text); font-size: 1.2rem;"><strong>Your feedback, good or bad, is a gift. These reviews are the foundation of our business.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bathroom Wall Journalism Section -->
+    <section id="bathroom-wall" class="bathroom-wall-section" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="fade-up" style="max-width: 900px; margin: 0 auto;">
+                <div class="warning-badge" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                    The Bigger Picture
+                </div>
+                <h2 class="section-title">Bathroom Wall Journalism: Anonymous Attacks in the Digital Age</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">In 2025, anonymous online defamation has evolved from questionable sites like Ripoff Report to algorithmic amplification on Reddit and Google. A single false post from a dormant account can devastate a business with <strong style="color: var(--color-text);">no recourse, no appeals, and no accountability</strong>.</p>
+                
+                <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.9;">For Sale By Inventor has been targeted by what we call "bathroom wall journalism"—anonymous attacks that search engines and AI models amplify as fact. This is our story, why the system is broken, and how we're fighting back with radical transparency.</p>
+                
+                <!-- Timeline -->
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; margin: 2rem 0;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--color-text);">The Evolution of Online Defamation</h3>
+                    
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div style="padding-left: 1.5rem; border-left: 3px solid var(--color-border);">
+                            <h4 style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Early 2000s: The Ripoff Report Era</h4>
+                            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">Limited reach—most people questioned credibility. Sites operated in legal gray areas, but removal was sometimes possible.</p>
+                        </div>
+                        <div style="padding-left: 1.5rem; border-left: 3px solid var(--color-border);">
+                            <h4 style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">2010s: The Social Media Rise</h4>
+                            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;">Wider reach through Facebook, Twitter, early Reddit. People started fact-checking, and platforms had basic reporting systems.</p>
+                        </div>
+                        <div style="padding-left: 1.5rem; border-left: 3px solid var(--color-accent);">
+                            <h4 style="color: var(--color-accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">2020s: Algorithm Amplification</h4>
+                            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin: 0;"><strong style="color: var(--color-text);">Global reach.</strong> Reddit posts outrank business websites. Google prioritizes high-authority platforms regardless of content accuracy. AI models scrape and repeat false information as "fact." Anonymous posters face zero consequences.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The Problem -->
+                <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-lg); padding: 2rem; margin: 2rem 0;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: #ef4444;">What Happened to Us</h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.8;">A damaging post appeared on Reddit—written by a <strong style="color: var(--color-text);">dormant account with zero connection to inventing</strong>—that popped up just long enough to attack For Sale By Inventor before vanishing again.</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.8;">Attempts to flag the post for trademark violation (our company name clearly in the title) were immediately denied. There's no real reporting option, no due process, no appeals—<strong style="color: var(--color-text);">just your business's name written across the digital bathroom wall.</strong></p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 0; line-height: 1.8;">Even worse: Google's Gemini AI falsely reported that <strong style="color: #ef4444;">lawsuits had been filed against our company</strong>—something that has never happened. No consequence. No accountability. No way to correct it.</p>
+                </div>
+                
+                <!-- Our Response -->
+                <div style="background: rgba(37, 96, 153, 0.08); border: 1px solid rgba(37, 96, 153, 0.2); border-radius: var(--radius-lg); padding: 2rem; margin: 2rem 0;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-primary);">Our Response: Radical Transparency</h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.8;">We're not going to hide. We're not going to be silent. <strong style="color: var(--color-text);">We're going to be louder.</strong></p>
+                    <ul style="color: var(--color-text-muted); padding-left: 1.5rem; line-height: 2;">
+                        <li><strong style="color: var(--color-text);">We're giving away all our secrets</strong>—how we help inventors, why our background is clean, and how our real reviews paint a true picture.</li>
+                        <li><strong style="color: var(--color-text);">We're making our process transparent</strong>—every service, every cost, every timeline, fully documented.</li>
+                        <li><strong style="color: var(--color-text);">We're amplifying real testimonials</strong>—real people, real names, real results.</li>
+                        <li><strong style="color: var(--color-text);">We welcome every honest question</strong>—ask us directly, and we'll answer publicly and honestly.</li>
+                    </ul>
+                </div>
+                
+                <!-- Stats -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0; text-align: center;">
+                    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem;">
+                        <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">4.6/5</div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-muted);">Star Rating</div>
+                    </div>
+                    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem;">
+                        <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">200+</div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-muted);">Verified Reviews</div>
+                    </div>
+                    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem;">
+                        <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--color-success);">ZERO</div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-muted);">Lawsuits Filed</div>
+                    </div>
+                    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem;">
+                        <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">A+</div>
+                        <div style="font-size: 0.8rem; color: var(--color-text-muted);">BBB Rating</div>
+                    </div>
+                </div>
+                
+                <p style="color: var(--color-text); text-align: center; font-size: 1.1rem; margin-top: 2rem;"><strong>Compare that to anonymous Reddit posts from dormant accounts. Which source would you trust?</strong></p>
+                
+                <!-- Read More CTA -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://forsalebyinventor.com/blog/bathroom-wall-journalism-online-defamation/" class="btn btn-primary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                        Read the Full Article: Bathroom Wall Journalism
+                    </a>
+                </div>
             </div>
         </div>
     </section>
